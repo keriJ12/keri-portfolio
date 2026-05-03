@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audi Vorsprung Local — Spec Project · Keri Janschitz</title>
+  <meta name="description" content="A spec system that turns one Audi e-tron creative idea into a 60-cell variant matrix across six European markets. End-to-end design: brief, master idea, system architecture, prompt scaffolds, anticipated failure analysis.">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+
+  <header class="site">
+    <div class="nav">
+      <a href="../../" class="brand">Keri Janschitz</a>
+      <nav class="menu">
+        <a href="../../#cases">Cases</a>
+        <a href="../../#about">About</a>
+        <a href="mailto:kerijanschitz@outlook.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="case-hero">
+    <img src="../../assets/audi/audi-at-reel-lifestyle-v1.png" alt="Audi e-tron descending the Großglockner Hochalpenstraße at dawn — alpine pass road with switchbacks visible">
+  </div>
+
+  <article class="case-page">
+    <a href="../../" class="back-link">All cases</a>
+    <p class="kind">Co-Hero · Spec Project</p>
+
+    <h2 style="border: none; padding: 0; margin-top: 0;">Six Hero Cells, Rendered</h2>
+    <p>The Lifestyle Commuter audience track of the variant matrix. Six markets, each grounded in a specific local road truth, all generated through prompt scaffolds with reference imagery anchors (Hammershøi · Saul Leiter · Wim Wenders) and a non-optional negative-prompt block. Headlines pass the brand-substitution test: rewrite each one until BMW couldn't say it.</p>
+
+    <div class="audi-grid">
+      <div class="audi-cell">
+        <img src="../../assets/audi/audi-de-reel-lifestyle-v1.png" alt="DE — Autobahn at pre-dawn">
+        <div class="overlay">
+          <p class="market">DE · Autobahn</p>
+          <p class="copyline">Engineered for precision. Built for the moment the limit ends.</p>
+        </div>
+      </div>
+      <div class="audi-cell">
+        <img src="../../assets/audi/audi-at-reel-lifestyle-v1.png" alt="AT — Großglockner Hochalpenstraße at dawn">
+        <div class="overlay">
+          <p class="market">AT · Großglockner</p>
+          <p class="copyline">Engineered for silence. Built for the alpine pass before the world wakes up.</p>
+        </div>
+      </div>
+      <div class="audi-cell">
+        <img src="../../assets/audi/audi-fr-reel-lifestyle-v1.png" alt="FR — Côte d'Azur corniche">
+        <div class="overlay">
+          <p class="market">FR · Côte d'Azur</p>
+          <p class="copyline">Engineered for control. Built for the road that asks you to slow down.</p>
+        </div>
+      </div>
+      <div class="audi-cell">
+        <img src="../../assets/audi/audi-it-reel-lifestyle-v1.png" alt="IT — Amalfi SS163 hairpins">
+        <div class="overlay">
+          <p class="market">IT · Amalfi SS163</p>
+          <p class="copyline">Engineered for response. Built for the corner that pays attention back.</p>
+        </div>
+      </div>
+      <div class="audi-cell">
+        <img src="../../assets/audi/audi-es-reel-lifestyle-v1.png" alt="ES — Pyrenees N-260 border">
+        <div class="overlay">
+          <p class="market">ES · Pyrenees N-260</p>
+          <p class="copyline">Engineered for range. Built for the border crossing that doesn't need a plan.</p>
+        </div>
+      </div>
+      <div class="audi-cell">
+        <img src="../../assets/audi/audi-uk-reel-lifestyle-v1.png" alt="UK — Cotswolds rural lane">
+        <div class="overlay">
+          <p class="market">UK · Cotswolds</p>
+          <p class="copyline">Engineered for quiet. Built for the lane that doesn't know it's beautiful.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="caption">All six cells: AI-generated through Gemini Imagen with reference imagery anchors and full negative-prompt block. No real Audi assets, IP, or relationships used — this is a spec project. The AT cell is shot from the Heiligenblut south approach, a road I have personal regional access to (Carinthia-resident designer); other markets are filled by the system's input layer with cultural-truth slots designed for local team handover.</p>
+
+    <hr>
+
+    <p style="margin: 2rem 0 0; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.04em; color: var(--ink-faint);">
+      The case below is the full design package: brief, master idea, system architecture, prompt scaffolds, anticipated failure analysis. Roughly 9,800 words. Read in order or skim section headers — both have been planned for.
+    </p>
+
+    <div id="content">Loading…</div>
+  </article>
+
+  <footer class="site">
+    <p>
+      Portfolio source: <a href="https://github.com/keriJ12/keri-portfolio" target="_blank" rel="noopener">github.com/keriJ12/keri-portfolio</a>
+    </p>
+  </footer>
+
+  <script type="text/markdown" id="md-content">
+# Spec Project Brief
+## Audi e-tron — "Vorsprung Local" Multi-Market System
+
+**Project type:** Spec campaign — portfolio piece for LOOP AI Content Designer application
+**Designer:** Keri Yang
+**Date:** 2026-05-02
+**Scope:** 1 master creative idea → 60-cell variant matrix → 12–15 rendered samples
+
+---
+
+## Why This Spec Exists
+
+LOOP's brief asks for an AI Content Designer who can build "scalable workflows (1→100 variations)" for "FMCG and global brands." This spec project demonstrates the thinking, system architecture, and production craft applied to a real brand-world brief at LOOP's actual client tier. Audi was chosen as the spec subject because (a) it is an existing LOOP client, (b) its brand discipline forces every system decision to be defensible, and (c) the 2026 e-tron multi-market positioning is a live problem that any agency in LOOP's space is currently solving.
+
+This project is fictional. No Audi assets, IP, or relationships were used. All outputs are AI-generated for demonstration purposes only.
+
+---
+
+## Grounding: This Is Not a Theoretical Exercise
+
+The system architecture proposed here is not invented for this spec. It re-applies architectural patterns from two independent practices the designer already runs:
+
+- **MR.ZHU Restaurant (paying client deployment, Klagenfurt, February–April 2025)** — a content system shipped for a real restaurant client; ~19 Reels through the documented pipeline (~24 in the feed total) at roughly 3-per-week cadence. **Measured outcome: +550% monthly Reel views vs. baseline period (IG internal insights).** Follower count remained essentially flat; the client separately reported anecdotally that walk-in customers had begun referencing the Instagram content as a visit driver. The MR.ZHU deployment is the source of this spec's compliance layer (the visible "Picture created with AI assistance" disclosure as a real-tier instance of EU AI Act Article 50 alignment), the per-brand anti-pattern configuration logic, and the three deployment failure modes (image-control unreliability, prompt-failure on human movement, handoff-not-designed) that drive specific architectural choices below.
+
+- **AIGrowth Lab (own-brand publishing practice, since March 22 2026)** — a daily public log of workflow-automation and AI-assisted-deployment experiments on @aigrowthlabeu; 34 experiments documented at the time of writing, 8 followers (deliberately not optimized for). The AGL practice is the source of this spec's locked design-system references (M-series, C-series, I-series, Quiz Reel, Cover Tester), its visual-restraint anchor system (Hammershøi / Saul Leiter / Wim Wenders), and the discipline of treating output as the test of comprehension that the Audi prompt scaffolds inherit.
+
+These are two independent practices, not a "lab → deployment" chain. They share an operator (me) and a toolkit (Skills, prompts, design tokens), but their stakeholders, audiences, goals, and content shapes differ in every other way. The Audi spec inherits the toolkit and the lessons; it does not inherit a single linear narrative.
+
+Every architectural decision in this Audi spec — the human gate placements, the anti-pattern list, the cultural-truth-at-input-layer pattern, the targeted-disclosure compliance posture — traces back to observations from one or both of those practices, not to reasoning about what a system *might* need. The Audi work is a re-instantiation at LOOP's client tier, not a first attempt.
+
+The portfolio's case-study sections — Hero: MR.ZHU; Practice: AGL; Track-record: Munich Fabric Start (Seidra Textilwerke) — document the production data that grounds these claims. This brief assumes the reader has read or will read those.
+
+---
+
+## Client (Spec)
+
+**Audi AG** — German premium automotive manufacturer. Spec project assumes the **e-tron range** (Audi's all-electric line) as the brief's product focus, reflecting Audi's stated 2026 strategic direction.
+
+---
+
+## Project Context
+
+In 2025–2026, Audi's e-tron range is mid-pivot from "premium electric" generalism toward **culturally truthful local positioning** in each major European market. Existing creative typically centers German-engineered universals (precision, quattro, Vorsprung) — strong but undifferentiating across markets that experience driving very differently. The brief: scale a single creative idea into 60 assets that **respect six market truths** without fragmenting the brand.
+
+---
+
+## Objective
+
+Produce a content system that turns one campaign concept ("Vorsprung Local") into 60 unique deliverables across 6 markets × 5 formats × 2 audiences, while:
+
+1. Maintaining Audi's brand voice and visual discipline
+2. Reducing per-asset production cost by ~75% vs. traditional shoot+adapt
+3. Keeping designer judgment in 3 explicit human gates
+4. Producing assets compliant with EU AI Act provenance requirements
+
+---
+
+## Target Audiences
+
+| Axis | Performance Driver | Lifestyle Commuter |
+|---|---|---|
+| Age | 35–55 | 30–50 |
+| Mindset | Driving as craft | Driving as life-context |
+| Decision driver | Power, handling, road feel | Quiet, range, family fit |
+| Visual cue | Open road, dynamic angles | Considered framing, daily setting |
+| Copy register | Technical-poetic | Observational-warm |
+
+Both audiences exist in every market. The matrix renders both per market × format pair.
+
+---
+
+## Key Markets (6)
+
+| Market | Why included | Cultural truth |
+|---|---|---|
+| **DE** Germany | Home market, Autobahn culture | Speed as engineered right |
+| **AT** Austria | LOOP HQ market — designer has direct regional access | Großglockner Hochalpenstraße — alpine drive as ritual; the designer is Carinthia-based and has driven the Heiligenblut (south) approach |
+| **FR** France | Côte d'Azur EV adoption leadership | Coastal, slow, considered drives |
+| **IT** Italy | Hairpin / coastal road heritage | Driving as performance-as-pleasure |
+| **ES** Spain | Cross-border Pyrenees touring | Long range, mixed-terrain pragmatism |
+| **UK** United Kingdom | Premium EV early-adopter market | Quiet rural lanes, considered luxury |
+
+---
+
+## Brand Constraints (Audi Voice & Visual)
+
+**Voice:**
+- Restrained. No exclamation marks. No "innovation" / "revolution" / "game-changer" hype vocabulary.
+- Engineered honesty over emotional sell.
+- Statements end with full stops, not ellipses or rhetorical questions.
+
+**Typography:**
+- Display: Audi Type Wide / Extended (or stand-in: Inter Display in production lockups)
+- Body: Audi Type Regular (or stand-in: Inter)
+- Hierarchy: 3 sizes max per asset.
+
+**Color:**
+- Primary: Audi Red (#BB0A30) used sparingly — single-element accent only
+- Otherwise: photography-driven, no decorative color blocks
+- Black, white, neutral grays only for typography
+
+**Photography:**
+- Reference DNA: Hammershøi restraint, Saul Leiter color quietude, Wim Wenders road framing
+- Avoid: heroic angles, lens flare, generative AI clichés (oversaturated sunsets, glowing taillights)
+- Always include environmental context — the car is in a place, not a void
+
+**Logo:**
+- Four rings. Position: lower-left or upper-right corner. No center placement.
+- No size variation across formats — proportional to safe area only.
+
+---
+
+## Channel Mix (5 Formats)
+
+| Format | Aspect | Duration / Length | Primary use |
+|---|---|---|---|
+| **Instagram Reel** | 9:16 | 15s | Awareness, market launch |
+| **Instagram Story** | 9:16 | 5s static / 15s video | Always-on, swipe-to-detail |
+| **YouTube Shorts** | 9:16 | 30s | Mid-funnel, mobile sustained attention |
+| **CTV (Connected TV)** | 16:9 | 20s | Brand awareness, household reach |
+| **OOH (Out-of-Home)** | 4:3 / vertical / wild | Static | High-frequency contextual, rail/transit |
+
+Each format has its own copy length, motion budget, and safe-area logic — encoded in the template layer (Day 1 system architecture).
+
+---
+
+## KPIs (Spec Hypothesis)
+
+| KPI | Traditional baseline (illustrative) | System target | Notes |
+|---|---|---|---|
+| Time per asset (avg) | ~6 hours | ~1.5 hours | Templates + AI orchestration absorb most repetitive labor |
+| Assets per campaign cycle | 8–12 | 60+ | 5× volume at same human time investment |
+| Brand voice deviation rate | ~10–15% (typical post-review) | <3% target | Constraint-as-code in template layer |
+| Time from brief lock to first 10 assets | ~14 days | ~3 days | Parallel variant generation |
+| Per-market cultural fit (qualitative review by local team) | n/a (usually translated only) | High (cultural-truth slot in template) | Local team supplies cultural inputs, not full re-shoots |
+
+*Baseline figures in this table are industry-typical illustrative ranges, not Audi-specific or LOOP-specific data. They establish order-of-magnitude expectations against which the system targets are sized.*
+
+These are spec hypotheses — not measured outcomes for this Audi project. The portfolio frames them as predictions with reasoning, not claims.
+
+The closest *measured* analog from the designer's deployed work is Mr Zhu Restaurant: **+550% Reel views relative to prior period average**, achieved by the same architectural pattern applied at restaurant client tier. The Audi spec's predictions extrapolate the architecture, not the specific outcome — different brand, audience, and channel mix.
+
+---
+
+## Compliance Considerations
+
+This system was designed with **EU AI Act (2024, in force 2026)** obligations in mind. The compliance approach is **not aspirational** — it extrapolates from compliance practice already deployed at MR.ZHU Restaurant tier, where AI-generated promotional imagery carries human-readable disclosure ("Picture created with AI assistance") in the footer of every affected asset. The Audi spec adapts the same principle to a premium register, where visible disclosure would conflict with brand voice but the Article 50 obligation still applies.
+
+1. **Provenance:** Every AI-generated asset carries C2PA-compatible metadata indicating model, prompt fingerprint, and human-review status. (At MR.ZHU tier, equivalent transparency is achieved through visible footer disclosure; at Audi tier, silent metadata.)
+2. **Disclosure:** Public-facing assets that contain AI-generated imagery include silent watermarks per AI Act Article 50. (MR.ZHU equivalent: visible "Picture created with AI assistance" line.)
+3. **Brand Voice Boundary:** Audi spokesperson likeness, real-person voice cloning, and historical figure references are blocked at the template layer (not at prompt layer — prompt-level blocks fail).
+4. **Data Residency:** Production runs use EU-hosted model endpoints where available (e.g., Mistral, Anthropic EU residency, Stability self-hosted) for any asset using client-confidential briefs.
+
+The portfolio's "Compliance Layer" section walks through each of these in concrete implementation terms, not as a checklist. The MR.ZHU precedent is referenced explicitly so the reader can verify the practice is already real before the Audi spec extrapolates it.
+
+---
+
+## Production Scale Promise
+
+**Input:** 1 master idea (Vorsprung Local) + 6 cultural truths (one per market, supplied by local teams)
+**Output:** 60 unique deliverables, of which 12–15 are rendered to final quality for portfolio demonstration; the remaining 45–48 are template-instantiated and prompt-staged but not human-reviewed (this distinction is shown explicitly).
+
+**Human gates:**
+1. **Brand voice gate** — every copy line passes through a brand voice classifier + designer review before publish
+2. **Cultural truth gate** — local market lead reviews per-market hero asset before scale-out
+3. **Final selection gate** — designer chooses which variants ship vs. archive
+
+Everything between gates is automated.
+
+---
+
+## Success Criteria for This Spec (Portfolio Outcome)
+
+The case study succeeds if a LOOP hiring manager who reads it can answer YES to all of:
+
+1. Could she walk into a real Audi (or equivalent) brief on Day 1 and produce a system architecture in a working session?
+2. Does she understand the difference between "AI as productivity tool" and "AI as production system"?
+3. Does she know where humans must stay in the loop, and can she defend each gate?
+4. Can she ship — not just design?
+
+If any of these read NO after the case study, the project failed regardless of visual polish.
+
+---
+
+## Out of Scope
+
+- Real Audi creative team workflow simulation (we don't pretend to know their internal process)
+- Real Audi performance data (we use industry-standard benchmarks for hypotheses)
+- Media buying / paid distribution strategy (this is a content system, not a media plan)
+- Localization beyond the 6 markets listed
+- Audio / music selection (referenced as system slot, not produced)
+
+
+---
+
+# Master Idea: Vorsprung Local
+## One creative concept, six cultural truths, sixty deliverables.
+
+---
+
+## One-line thesis
+
+> **Audi's German engineering, met by the road you actually drive.**
+
+---
+
+## Long-form thesis
+
+For thirty years, "Vorsprung durch Technik" has positioned Audi as universally engineered — the same precision, the same quattro, the same promise, regardless of which road carries it. That universality once read as confidence. In 2026, with the e-tron line maturing and EV adoption fragmenting along sharply local lines (range anxiety in Spain, Autobahn etiquette in Germany, single-lane patience in the UK), universality reads as distance.
+
+**Vorsprung Local** keeps the Audi promise intact and shifts only the meeting point. The campaign asserts that German engineering is most legible not on a generic road, but on *your* road — the Großglockner pass, the Pyrenees border crossing, the Cotswolds rural lane, the Salzkammergut lake commute. Each market's hero asset is shot (here, AI-generated for spec) on a road that locals would recognize as theirs, with a copy line that translates the engineering claim into that road's specific test.
+
+The brand voice never bends. The road does the translating.
+
+This is not localization in the standard agency sense (translate the headline, swap the model). It is **cultural-truth-driven variant generation** — a system where the master idea is locked, and the variable layer is the road, the light, the time of day, the local idiom for what "engineering precision" means when it meets that specific terrain.
+
+---
+
+## Why This Idea Fits a 1→100 System
+
+A scalable variant system needs the master idea to have a **structural slot** that the variant layer naturally fills. Most "scalable" campaign ideas fail this test — they have one hero concept with cosmetic localization wrapped around it. The variant layer is fragile.
+
+Vorsprung Local has the slot built into the concept:
+
+```
+[GERMAN ENGINEERING CLAIM] meets [LOCAL ROAD TRUTH]
+       (locked, master)              (variable, per market)
+```
+
+This means:
+- The variant generator has a clean input contract — give it a market's road truth, get back a brand-coherent asset
+- New markets can be added without re-briefing the master idea
+- Cultural review can happen at the truth-input layer, not at the asset-output layer (catches issues earlier, cheaper)
+- Brand voice protection lives in the master, not in 60 separate copy reviews
+
+This is the difference between a scalable idea and a scalable production process. Most agency 1→100 systems fail because they have the second without the first.
+
+---
+
+## Tone & Language Guardrails
+
+**Sentence shape:**
+- Two clauses, joined by a comma. First clause: the engineering promise. Second: the local meeting.
+  - Example (DE): "Engineered for precision. Built for the moment Autobahn opens up."
+  - Example (AT lifestyle, draft — designer to confirm road): "Engineered for silence. Built for the lake before the lake wakes up."
+  - Example (UK): "Engineered for control. Built for the lane that doesn't know it's beautiful."
+
+**Vocabulary:**
+- Allowed: engineered, built, precision, control, silence, range, considered
+- Avoided: revolutionary, game-changing, next-generation, unleash, dominate, conquer
+- Audi never "dominates" a road. Audi *meets* a road.
+
+**Voice integrity check (one question):**
+> "If we replaced the road with a different car brand's road, would the headline still work?"
+> If yes — the headline isn't doing its job. Rewrite.
+
+---
+
+## Cultural Truth — Per Market
+
+| Market | Road Truth (Hero) | Driving Mood | Local Idiom Hook |
+|---|---|---|---|
+| **DE** | Autobahn (unrestricted section, A8 or A9) | Engineered freedom | "the moment the limit ends" |
+| **AT** | Großglockner Hochalpenstraße — Heiligenblut (south) approach, dawn light | Alpine ritual — "the drive worth waking up for" | *[TBD: designer to draft two-clause hook line; this is the system's input-layer slot for AT, intentionally human-supplied]* |
+| **FR** | Côte d'Azur coastal corniche (D6098 Nice–Menton) | Slow luxury | "the road that asks you to stay" |
+| **IT** | Amalfi SS163 hairpins | Performance-as-pleasure | "where every meter is a decision" |
+| **ES** | Pyrenees border crossing (N-260) | Range-meets-terrain | "from one country to another, on one charge" |
+| **UK** | Cotswolds rural B-road | Quiet luxury | "the lane that doesn't know it's beautiful" |
+
+**Note on AT:** Großglockner Hochalpenstraße was chosen over Salzkammergut alternatives because (a) the designer is Carinthia-based (Nötsch im Gailtal) and has direct regional access to the Heiligenblut south approach, allowing first-person verification of local truth that pure-prompt generation cannot reach; (b) the road's character changes radically with light and altitude in a way that aligns with e-tron's torque-and-silence story; (c) it is the most globally recognizable Austrian alpine driving road, which serves the system's demonstration purpose without sacrificing local authenticity. A working draft of the AT hook line will be supplied by the designer on Day 2; the Salzkammergut alternative is documented as a considered route in the case study, not silently discarded.
+
+---
+
+## Three Routes Considered (1 Chosen, 2 Killed)
+
+The portfolio will surface this section explicitly. Showing rejected ideas is the part that AI tools won't fake — the *reasoning* for rejection is the designer's fingerprint.
+
+### Route A — "Vorsprung Local" ✅ CHOSEN
+*German engineering, met by the road you actually drive.*
+
+Why chosen: Built-in structural slot for variant scaling. Brand voice locked in master. Cultural truth lives at input layer. Production cost scales sub-linearly.
+
+### Route B — "Built for the Quiet" ❌ KILLED
+*Audi e-tron as the silence between engine sounds.*
+
+Why killed: Strong single-asset idea, weak system. The "silence" claim has no per-market variant slot — silence sounds the same in Germany and Italy. Forcing localization at the cosmetic layer. Would scale to 60 assets that mostly look identical.
+
+### Route C — "The Range You Don't Notice" ❌ KILLED
+*Reframing range anxiety as a lifestyle freedom.*
+
+Why killed: Strong insight, but commits the brand to a defensive narrative (range *anxiety* is the implicit reference point). Audi voice doesn't argue; it states. Also, range numbers vary per spec and per battery temperature — committing to a range claim creates a regulatory + technical-truth maintenance burden across 6 markets that the production system shouldn't carry.
+
+---
+
+## Anti-Patterns (What Vorsprung Local Will Never Do)
+
+These are the edges of the brand voice. Each variant in the 60-cell matrix is reviewed against this list before render. The list mixes two kinds of constraint, and the case study labels which is which:
+
+- **Brand-derived** — required by Audi's existing voice and visual discipline (anti-patterns 1–4).
+- **Production-derived** — chosen because of how AI image and copy generation behave at this point in time, observed across the designer's AGL R&D and Mr Zhu deployment, and corroborated by industry reports (anti-patterns 5–6).
+
+The distinction matters because brand-derived anti-patterns are stable; production-derived anti-patterns will shift as model capability changes. The system architecture treats them differently (production-derived rules are reviewed each campaign cycle).
+
+1. **No anthropomorphizing the car.** *(Brand-derived.)* The car does not "feel," "want," or "love." The driver does.
+2. **No before/after framing.** *(Brand-derived.)* Audi doesn't have a "before." Engineering is a steady state, not a transformation arc.
+3. **No comparative claims against competitors.** *(Brand-derived.)* Even implicit ("the only EV that...") is out.
+4. **No urgency manufacture.** *(Brand-derived.)* "Limited time," "act now," "while supplies last" — never. Audi sells considered decisions.
+5. **No travel-influencer aesthetic.** *(Production-derived.)* Tourist-bucket-list framing of the road is the cliché Vorsprung Local was designed to escape; AI image generators default to this aesthetic and must be actively steered away from it through reference imagery, not prompt language alone.
+6. **No AI-generated humans in hero shots.** *(Production-derived.)* Faces, hands, body proportions remain the AI tell at the time of writing. Humans appear only in silhouette, in motion, or out of focus — choices that are also defensible on their own photographic merit. This rule is reviewed each cycle as model capability evolves.
+
+---
+
+## Slot for KK (Day 2 morning)
+
+Two decisions to lock before Day 2 production starts:
+
+1. **AT hero road:** Salzkammergut (lifestyle) vs. Großglockner Hochalpenstraße (performance — but acknowledged as 1.5-hour drive from Salzburg, not "home road"). Or a third option you know better than I do.
+2. **AT local idiom hook line:** Two-clause structure ("Engineered for X. Built for Y."). Drop me a draft I'll polish.
+
+These two slots are the ones the system architecture *requires* a human to fill. Everything else, AI handles.
+
+
+---
+
+# System Architecture (Day 1 Sketch)
+## Vorsprung Local — 1 Idea → 60 Assets
+
+> This document is the working sketch. Day 4 converts it into a presentable SVG embedded in the portfolio HTML. The structure here is what the SVG will encode.
+
+---
+
+## Layer Stack (Top-Down)
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      MASTER LAYER (locked)                       │
+│   • Vorsprung Local thesis                                       │
+│   • Audi brand voice rules                                       │
+│   • Visual DNA (Hammershøi/Leiter/Wenders reference)             │
+│   • Anti-pattern list                                            │
+└────────────────────────────────┬────────────────────────────────┘
+                                 │
+                                 ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    INPUT LAYER (per market)                      │
+│   • Road truth (local team supplies)                             │
+│   • Local idiom hook                                             │
+│   • Time-of-day / light condition                                │
+│   • Reference photo direction                                    │
+└────────────────────────────────┬────────────────────────────────┘
+                                 │
+                                 ▼
+┌─────────────────────────────────────────────────────────────────┐
+│              VARIANT GENERATION LAYER (AI orchestration)         │
+│                                                                  │
+│   ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐     │
+│   │   Imagery    │  │     Copy     │  │   Composition    │     │
+│   │   (Gemini    │  │   (Claude    │  │   (Template      │     │
+│   │   Imagen 3)  │  │   Sonnet 4.6)│  │   layer, code)   │     │
+│   └──────┬───────┘  └──────┬───────┘  └────────┬─────────┘     │
+│          │                  │                    │               │
+│          └──────────────────┴────────────────────┘               │
+│                              │                                   │
+│                              ▼                                   │
+│                    [Per-cell asset draft]                        │
+└────────────────────────────────┬────────────────────────────────┘
+                                 │
+                                 ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    HUMAN GATE LAYER (3 gates)                    │
+│                                                                  │
+│   GATE 1: Brand Voice Check    ← every copy line, before render  │
+│   GATE 2: Cultural Truth Check  ← market lead, per-market hero   │
+│   GATE 3: Final Selection      ← designer, ship vs. archive      │
+└────────────────────────────────┬────────────────────────────────┘
+                                 │
+                                 ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                  COMPLIANCE LAYER (always-on)                    │
+│   • C2PA provenance metadata embed                               │
+│   • AI Act Article 50 watermark (silent, public-facing)          │
+│   • Brand voice classifier log (auditable)                       │
+│   • EU model endpoint enforcement (data residency)               │
+└────────────────────────────────┬────────────────────────────────┘
+                                 │
+                                 ▼
+                  ┌──────────────────────────────┐
+                  │     60 deliverables ready    │
+                  └──────────────────────────────┘
+```
+
+---
+
+## The Variant Matrix (Where the 60 Comes From)
+
+```
+                    REEL    STORY   SHORTS   CTV    OOH
+                  ┌────────┬───────┬────────┬──────┬──────┐
+DE  Autobahn      │ P / L  │ P / L │  P / L │ P / L│ P / L│
+                  ├────────┼───────┼────────┼──────┼──────┤
+AT  [TBD by KK]   │ P / L  │ P / L │  P / L │ P / L│ P / L│
+                  ├────────┼───────┼────────┼──────┼──────┤
+FR  Corniche      │ P / L  │ P / L │  P / L │ P / L│ P / L│
+                  ├────────┼───────┼────────┼──────┼──────┤
+IT  Amalfi        │ P / L  │ P / L │  P / L │ P / L│ P / L│
+                  ├────────┼───────┼────────┼──────┼──────┤
+ES  Pyrenees      │ P / L  │ P / L │  P / L │ P / L│ P / L│
+                  ├────────┼───────┼────────┼──────┼──────┤
+UK  Cotswolds     │ P / L  │ P / L │  P / L │ P / L│ P / L│
+                  └────────┴───────┴────────┴──────┴──────┘
+                            6 × 5 × 2 = 60 cells
+
+Legend: P = Performance Driver audience
+        L = Lifestyle Commuter audience
+```
+
+Of these 60 cells, the portfolio renders **12–15** to final visual quality. The rest are template-instantiated, prompt-staged, and indexed but not human-finished. This distinction is shown explicitly in the case study — the system *can* produce 60, the portfolio demonstrates the system honestly by finishing a representative subset.
+
+**Render priority for portfolio (working list, refine Day 2):**
+
+| Priority | Market | Format | Audience | Why this cell |
+|---|---|---|---|---|
+| 1 | AT | Reel | L | LOOP HQ market, lifestyle hero |
+| 2 | DE | OOH | P | Most iconic Audi territory + biggest format scale |
+| 3 | IT | Reel | P | Visual drama for hero gallery |
+| 4 | FR | Story | L | Quiet-luxury aesthetic showpiece |
+| 5 | ES | Shorts | P | Range-meets-terrain narrative |
+| 6 | UK | OOH | L | Cotswolds tonal restraint |
+| 7 | AT | Story | P | Alpine pass — second AT showpiece |
+| 8 | DE | Reel | L | Counterpoint to DE OOH performance |
+| 9 | IT | OOH | L | Amalfi as lifestyle, not just drama |
+| 10 | FR | CTV | P | Coastal corniche, longer-form motion |
+| 11 | UK | Reel | P | Quiet-precision counterpoint to lifestyle |
+| 12 | ES | Story | L | Border-crossing as quiet adventure |
+| 13–15 | TBD | TBD | TBD | Reserve slots for "What AI got wrong" before/after pairs |
+
+---
+
+## AI Orchestration — Who Does What
+
+| Step | Tool | Role | Why this tool |
+|---|---|---|---|
+| Brief decomposition | Claude Sonnet 4.6 | Parse master + input layers into per-cell prompt scaffolds | Long-context reasoning + brand-voice consistency |
+| Imagery generation | Gemini Imagen 3 (via UI) | Per-cell hero image, 3 candidates per cell | Strong on environmental photography, weaker on character — matches anti-pattern (no AI humans) |
+| Copy generation | Claude Sonnet 4.6 | Two-clause headlines per cell + caption per market | Brand voice classifier + Claude both run; Claude stays on voice |
+| Composition / layout | Code (HTML/CSS templates per format) | Place imagery + copy + logo within format-specific safe areas | Deterministic — design tokens locked, no AI variance at layout layer |
+| Brand voice classifier | Claude (separate prompt) | Score each copy line against 6-rule rubric, flag deviations | Audit trail; designer reviews flags only, not every line |
+| Compliance metadata | Custom script | C2PA stamp + AI Act watermark + log entry | Standards-based; no model in the loop here |
+
+---
+
+## Human Gates — Where the Designer Stays In
+
+Three gates. Each is non-negotiable. Each takes <30 minutes of designer time per campaign cycle. The 75% production cost reduction lives in *not* having humans in the loop between gates.
+
+**Gate placement is corrective, not theoretical.** The three-gate structure below is a direct response to a specific failure observed in MR.ZHU deployment: the system worked because the designer ran it, but had not been designed for handoff. If the client's team had to take over the system, significant retraining would have been required. That failure is named explicitly in the Hero case study's "What Didn't Work in Deployment" section.
+
+The three gates are designed so that each can be owned by a different team member with a clear role boundary:
+
+- Gate 1 (brand voice) is ownable by an editorial reviewer
+- Gate 2 (cultural-truth check) is ownable by a per-market local lead
+- Gate 3 (final selection) is ownable by the design lead or creative director
+
+This is the kind of role-separation the MR.ZHU deployment did not have. The Audi spec's structure is the correction. Gate 2 specifically is the gate added for matrix-scale reasons — the MR.ZHU single-market deployment did not need it; Audi's six-market matrix does. Where the spec extrapolates beyond what was deployed, the case study labels the extrapolation explicitly.
+
+### Gate 1: Brand Voice Check
+**When:** After copy generation, before render
+**Who:** Designer (or trained voice classifier with designer override)
+**What's reviewed:** Every copy line scored against the 6-rule rubric. Lines scoring <80% are surfaced for rewrite.
+**Time per cycle:** ~15 minutes for 60 lines (most pass; only flagged subset reviewed)
+
+### Gate 2: Cultural Truth Check
+**When:** After per-market hero asset is rendered, before scale-out
+**Who:** Local market lead (one per market)
+**What's reviewed:** Does the hero asset feel local-true, or tourist-cliché? Local idiom legible in source language?
+**Time per market lead:** ~10 minutes per market (review hero only, not all 10 cells per market)
+
+### Gate 3: Final Selection
+**When:** After all 60 cells render
+**Who:** Designer + creative director
+**What's reviewed:** Which cells ship to live channels, which archive, which return to revision.
+**Time per cycle:** ~30 minutes
+
+**Total designer time per 60-asset cycle: ~45 minutes of gate-only review**, plus the upfront brief/architecture work which is one-time per campaign.
+
+---
+
+## Failure Modes (Pre-Identified, Documented in Portfolio)
+
+A serious system architecture documents what it expects to fail before it ships. The portfolio's "What AI Got Wrong" section will surface these honestly with concrete examples:
+
+1. **AI imagery overshoots brand restraint** — generates "cinematic" when brand is "considered." Mitigation: visual reference library hard-coded into prompt scaffolds, not requested via prompt language.
+2. **Copy classifier false negatives** — passes hype vocabulary that uses synonyms ("transformative" passes when "revolutionary" is blocked). Mitigation: classifier rule list expands per cycle.
+3. **Cultural truth slippage** — local market lead approves, but local audience reads as tourist-gaze. Mitigation: this is the failure that doesn't get caught by the system; it gets caught by post-launch listening, and the system updates.
+4. **Format-specific copy length** — Reel 15s and OOH wild-format need radically different copy density; default generation overshoots. Mitigation: format-specific length budgets in template layer.
+5. **Logo placement in AI-generated photography** — Imagen sometimes generates Audi-like logos on cars in hero shots, conflicting with brand-mandated logo placement. Mitigation: car body in hero shots is rendered without visible badging; Audi logo is added at composition layer only.
+
+---
+
+## What Day 2 Needs (Inputs From KK)
+
+| Input | Why needed | Owner |
+|---|---|---|
+| AT hero road decision | Locks Cell 1 + Cell 7 of render priority | KK |
+| AT local idiom hook line | Drives copy generation prompt scaffold for AT cells | KK (drafts) → Claude (polishes) |
+| Restaurant case raw material | Q1–6 from yesterday | KK |
+| Zikrr case raw material | Q7–10 from yesterday | KK |
+
+Everything else, Day 2 production runs without further KK input until Day 4 portfolio assembly.
+
+
+---
+
+# Audi Vorsprung Local — Prompt Scaffolds & Reference Library
+## The image-and-copy generation layer of the variant matrix
+
+This document is the operational layer of the Audi spec system. It contains the prompt structures, reference imagery anchors, and copy templates that the variant generation step uses to produce per-cell hero assets. The 6 hero cells documented here correspond to the Lifestyle Commuter audience × Reel format slice of the 60-cell matrix; the same scaffolds extrapolate to Performance audience and other formats by parameter substitution, not by re-authoring.
+
+The scaffolds are written so that a teammate other than the original designer can run them. This is a direct correction of the MR.ZHU deployment failure mode #3: "the system was built to be run by me, not handed off."
+
+---
+
+## How to Use These Scaffolds
+
+For each of the 60 cells in the variant matrix, an operator follows five steps. The scaffolds in this document handle steps 2 and 5; the rest are codified in the system architecture document.
+
+```
+1. Load master constraint   ← from master-idea.md (locked, never edited per cell)
+2. Load cell-specific prompt scaffold (this document)
+3. Substitute cultural-truth input from per-market lead
+4. Run image generation (Gemini Imagen 3, EU endpoint preferred)
+5. Run copy generation against the two-clause copy template
+6. Pass through Gate 1 (brand voice check) before render
+```
+
+The scaffolds are templates, not finished prompts. Each one expects a small number of cultural-truth inputs that come from a market lead, not from the designer or the model. The point of this separation is that the cultural truth — the bit only a local can know — lives in the input layer, not in the model's training data.
+
+---
+
+## Reference Imagery Anchor Library
+
+Three reference DNAs steer the visual layer. Each is invoked by name in the prompt scaffolds; the system carries a small image library (15–20 reference frames per anchor) that the operator surfaces alongside the prompt to the model. **Reference imagery is the load-bearing element of the visual restraint claim. Prompt language alone has been observed to fail at controlling these qualities** (see MR.ZHU deployment failure #1).
+
+### Anchor 1 — Hammershøi: Light Discipline
+
+**What it controls:** the quality of light, the absence of drama, the dignity of the still moment. Hammershøi (Vilhelm Hammershøi, Danish painter, 1864–1916) painted interiors mostly empty of action; his work teaches that light describing space is itself the subject.
+
+**For Vorsprung Local:** light should describe the road and the air, not the car. The car receives light from the landscape; it does not pose for it. Hammershøi atmospheric grays govern the dawn and dusk frames; his soft light through window discipline governs the diffuse-overcast frames.
+
+**Reference frames in the library:**
+- *Interior with Young Woman from Behind* (1904) — for soft directional light and contemplative restraint
+- *Dust Motes Dancing in the Sunbeam* (1900) — for atmospheric particulate and dawn-light reference
+- *Strandgade 30* interior series — for compositional emptiness and considered framing
+
+### Anchor 2 — Saul Leiter: Color Discipline
+
+**What it controls:** color saturation, color temperature, the discipline of *almost-color*. Leiter (American photographer, 1923–2013) made color photography that whispers rather than declares; his work teaches that the most memorable color is the color you notice second.
+
+**For Vorsprung Local:** color should be a property of the air and the hour, not a property of the asset. No saturation boost, no HDR, no Instagram-warm grading. Leiter's discipline of *fog, rain, reflection, glass* — anything that softens color while keeping it specific — is the governing principle.
+
+**Reference frames in the library:**
+- *Snow* (1960) — for cool palette restraint and atmospheric softness
+- *Through the Window* series — for color-through-glass softening
+- *Foot on El, NYC* (1954) — for bold composition with whispered color
+- *Red Umbrella* — for color as a single-element accent against neutral field
+
+### Anchor 3 — Wim Wenders (Paris, Texas / Wings of Desire / Million Dollar Hotel): Framing Discipline
+
+**What it controls:** how the car sits in the landscape. Wenders (German filmmaker, b. 1945) frames roads and figures so that the landscape carries the meaning and the figure receives meaning from the landscape — the opposite of advertising's usual logic.
+
+**For Vorsprung Local:** the e-tron is small in frame, the road and country are dominant. The car is not the subject of the image; it is one element in an image about a road that exists with or without it. This is the deepest restraint: refusing to make the product the picture.
+
+**Reference frames in the library:**
+- *Paris, Texas* (1984) opening sequence — for figure-in-landscape scale, the road extending past the frame
+- *Wings of Desire* (1987) Berlin sky frames — for vertical compositional weight on landscape over subject
+- *Million Dollar Hotel* (2000) urban framings — for car-in-environment scale at urban contexts (used sparingly; primarily for OOH cells)
+
+---
+
+## Master Prompt Structure (shared by all 6 cells)
+
+Every per-cell prompt is a substitution into this structure. Variables are in `{braces}`.
+
+```
+A photographic still, 9:16 vertical orientation.
+Setting: {LOCAL_ROAD_TRUTH}, {TIME_OF_DAY}, {LIGHT_CONDITION}.
+Subject: a single dark-grey Audi e-tron, {CAR_FRAMING}, in motion, viewed from {CAMERA_ANGLE}.
+Composition: car occupies {COMPOSITION_RATIO}; road and landscape dominate.
+Light reference: Hammershøi atmospheric grays / dawn-window light.
+Color reference: Saul Leiter — restrained, atmospheric, color as property of air not as overlay.
+Framing reference: Wim Wenders — figure-in-landscape, road extending beyond frame.
+
+The car is in the road. The road is the subject.
+
+No: heroic angles, drone-style aerial sweep, lens flare, motion-blur drama,
+HDR, oversaturation, Instagram-warm grading, sunset color grading,
+visible AI faces, hands on steering wheel close-up, prominent badging,
+human figures in foreground, drivers visible through windshield,
+"epic" framing, tourist-bucket-list framing of the location.
+```
+
+The negative prompt block at the bottom is **not optional and not abbreviated per cell**. Every cell carries the full negative block. This is operationally necessary because models default to advertising clichés when negative space is insufficient; brevity in the negative prompt has been observed to leak the cliché back in.
+
+---
+
+## Six Hero Cell Prompts (Lifestyle Commuter audience × Reel format)
+
+### Cell 1 — DE Autobahn
+
+```
+Setting: an unrestricted section of the A8 Autobahn, Bavarian countryside
+on either side, pre-dawn fog dispersing into first light.
+Time: 5:40 AM, blue hour transitioning to warm.
+Light: low sun behind the camera, fog catching first warmth, deep shadow
+in the foreground, gradient from cool to warm across vertical axis.
+Subject: a single dark-grey Audi e-tron, three-quarters rear view,
+in motion at moderate speed, slight head-on horizon line.
+Camera angle: eye-level from approximately 50m behind the car, road
+extending past frame top.
+Composition ratio: car occupies lower third; road and sky dominant.
+Light reference: Hammershøi atmospheric grays at dawn.
+Color reference: Saul Leiter cool-to-warm gradient through morning fog.
+Framing reference: Wenders Paris-Texas opening — figure receding into landscape.
+
+The car is in the road. The road is the subject. The audience is alone with both.
+
+[full negative prompt block]
+```
+
+**Cultural-truth input slot (filled by DE market lead):**
+- Specific stretch of A8: between which two ausfahrt
+- Whether the road has any locally distinctive feature (a particular bridge, a stretch of trees) that should be visible
+
+### Cell 2 — AT Großglockner Hochalpenstraße (Heiligenblut south approach)
+
+```
+Setting: the Heiligenblut south approach to Großglockner Hochalpenstraße,
+alpine pass road descending in switchbacks, distant peaks visible above
+mid-frame, valley implied below frame.
+Time: 6:00 AM, just past blue hour.
+Light: pre-dawn cold blue at road level; first gold catching the high
+peaks; very still air, no wind cues, no movement except the car.
+Subject: a single dark-grey Audi e-tron from behind, on a hairpin descent,
+glimpse of valley far below visible past the car's right side.
+Camera angle: eye-level, slightly elevated, road foreground catching cold
+shadow, peaks catching warmth.
+Composition ratio: car small (occupies ~10% vertical); mountain mass and
+valley dominant; sky band ~25% of frame.
+Light reference: Hammershøi cold-light interior; the discipline of light
+finding the surface and stopping.
+Color reference: Saul Leiter mountain-cool desaturation, blue dominant
+with single warm note (the peak).
+Framing reference: Wenders mountain framings — vehicle as small element
+in continental landscape.
+
+The drive is a ritual. The car is the smallest object in the frame.
+
+[full negative prompt block]
+```
+
+**Cultural-truth input slot (filled by KK as designer with regional access):**
+- Verify Heiligenblut south approach is the correct framing reference for AT (vs. Fuscher Törl north approach or other variant)
+- Designer first-person note: any specific switchback or vista that registers as "real local detail" rather than tourist-cliché framing
+
+### Cell 3 — FR Côte d'Azur D6098 (Nice–Menton corniche)
+
+```
+Setting: the D6098 coastal corniche between Nice and Menton, Mediterranean
+coastline visible below frame, terra-cotta stone retaining wall on inland side.
+Time: 4:30 PM, late afternoon.
+Light: warm directional from the right, sea catching directional light below,
+walls catching warm side-light, considered shadow on the road surface.
+Subject: a single dark-grey Audi e-tron rounding a slow curve, viewed
+three-quarters from rear-left, sea visible past the car's far side.
+Camera angle: eye-level, road horizon-line aligned with mid-frame.
+Composition ratio: car occupies center-mid (~15% of frame); sea horizontal
+band dominant; retaining wall vertical accent on inland side.
+Light reference: Hammershøi warm-side-light through interior window —
+afternoon warmth that has been quieted.
+Color reference: Saul Leiter terra-cotta/sea-blue duality, restrained.
+Framing reference: Wenders coastal framings — road as suspension between
+elements, not as conveyance.
+
+The road asks you to stay. The car obliges, slowly.
+
+[full negative prompt block]
+```
+
+**Cultural-truth input slot (filled by FR market lead):**
+- Specific corniche viewpoint (Èze, Cap Martin, Beaulieu) preferred for legibility
+- Local idiom for "slow luxury" / "the coastal pause"
+
+### Cell 4 — IT Amalfi SS163 hairpins
+
+```
+Setting: a hairpin section of the SS163 Amalfi coast road, terraced cliff
+face on inland side, sea visible far below, switchback visible past the
+near corner.
+Time: 9:00 AM, morning.
+Light: morning side-light from the east, terra-cotta cliffs warm-lit,
+sea cool blue below, road surface catching half-light.
+Subject: a single dark-grey Audi e-tron mid-corner, viewed three-quarters
+from front-right, body geometry legible but not hero-posed, suggesting
+controlled response rather than dramatic action.
+Camera angle: slightly elevated, looking down past the car onto the
+switchback below.
+Composition ratio: car ~20% of frame; cliff and switchback geometry
+dominant; sea band at base.
+Light reference: Hammershøi morning side-light discipline.
+Color reference: Saul Leiter — terra-cotta saturated only by sun, sea
+softened by atmosphere.
+Framing reference: Wenders elevated-perspective road sequences —
+the geometry of the road as visible decision-making space.
+
+Every meter is a decision. The car is in the geometry, not above it.
+
+[full negative prompt block]
+```
+
+**Cultural-truth input slot (filled by IT market lead):**
+- Whether to lean toward the Positano-side or Amalfi-side of the SS163
+- Local idiom for "performance as pleasure" / "driving as conversation with the road"
+
+### Cell 5 — ES Pyrenees N-260 border crossing
+
+```
+Setting: the N-260 mountain road in the Spanish Pyrenees, near a
+French/Spanish border crossing point, mixed forest and open mountain
+visible, road emerging from forest into open frame.
+Time: 11:30 AM.
+Light: overcast — soft uniform light, no harsh shadow, autumn or early
+spring (no snow but cold). Slight haze.
+Subject: a single dark-grey Audi e-tron emerging from a forest section
+onto an open mountain road, viewed three-quarters from front, distance
+implied past the car.
+Camera angle: eye-level, road extending past frame in receding diagonal.
+Composition ratio: car ~18% of frame; forest mass on near side, open
+mountain on far side, road as transition.
+Light reference: Hammershøi overcast-window discipline — soft uniform
+light without flatness.
+Color reference: Saul Leiter overcast-restraint — the moment when
+color is implied but not declared.
+Framing reference: Wenders border-crossing sequences — the road as
+threshold rather than destination.
+
+The border is in the road, not in a sign. The car continues without
+asking permission.
+
+[full negative prompt block]
+```
+
+**Cultural-truth input slot (filled by ES market lead):**
+- Specific N-260 segment (Bielsa, Aínsa, Sort) — affects the forest/mountain ratio
+- Local idiom for "range without anxiety" / "cross-border continuity"
+
+### Cell 6 — UK Cotswolds rural B-road
+
+```
+Setting: a narrow Cotswolds B-road, hedgerows on both sides, occasional
+honey-stone wall visible through gaps, road curving gently.
+Time: 6:45 PM, end of golden hour.
+Light: soft golden-warm but quiet — UK rural light quality, not the
+saturated Instagram golden hour. Slight haze.
+Subject: a single dark-grey Audi e-tron on the single-track lane,
+three-quarters rear view, hedge brushing close on the left side.
+Camera angle: eye-level, behind the car at close-medium distance.
+Composition ratio: car ~22% of frame; hedge mass on left, lane and
+hedge horizon receding to upper third.
+Light reference: Hammershøi end-of-day warmth, considered.
+Color reference: Saul Leiter quiet golds, not declarative.
+Framing reference: Wenders rural framings — the lane as known route,
+the car as familiar to it.
+
+The lane doesn't know it's beautiful. The car doesn't tell it.
+
+[full negative prompt block]
+```
+
+**Cultural-truth input slot (filled by UK market lead):**
+- Specific Cotswolds area (Burford, Bourton, Stow-on-the-Wold)
+- Local idiom for "quiet luxury" / "lane that doesn't perform"
+
+---
+
+## Two-Clause Copy Library
+
+Six headlines, one per cell. Format: `Engineered for X. Built for Y.` where X is an Audi engineering claim and Y is the local road truth.
+
+| Market | Headline |
+|---|---|
+| **DE** | Engineered for precision. Built for the moment the limit ends. |
+| **AT** | Engineered for silence. Built for the alpine pass before the world wakes up. |
+| **FR** | Engineered for control. Built for the road that asks you to slow down. |
+| **IT** | Engineered for response. Built for the corner that pays attention back. |
+| **ES** | Engineered for range. Built for the border crossing that doesn't need a plan. |
+| **UK** | Engineered for quiet. Built for the lane that doesn't know it's beautiful. |
+
+### Brand Voice Check Applied
+
+Each headline must pass the rubric in `master-idea.md`. Running the check on Cell 6:
+
+- Two clauses joined by period? ✅
+- Audi engineering claim first? ✅ ("Engineered for quiet" — Audi has positioned around refinement)
+- Local meeting second? ✅ (Cotswolds lane truth)
+- No exclamation marks? ✅
+- No prohibited vocabulary (revolutionary, game-changing, unleash, dominate)? ✅
+- Brand-substitution test: "Engineered for quiet. Built for the lane that doesn't know it's beautiful" — could BMW say this? *Audi-coded.* BMW would lean toward "Engineered for performance." This headline does not transfer. ✅
+
+The check fails informatively. If a headline passes the brand-substitution test (i.e., another premium-auto brand could plausibly say it), it is rewritten until the failure is specific enough to be Audi-only.
+
+---
+
+## Negative Prompt Library (full block, used by every cell)
+
+This block is appended verbatim to every per-cell prompt. It encodes anti-patterns #5 and #6 from the master idea.
+
+```
+NEGATIVE PROMPT — apply to every generation:
+
+Production-derived (will shift as model capability evolves):
+- No AI-generated photorealistic humans in the foreground or mid-ground.
+- No drivers visible through windshield (faces fail).
+- No close-up hands on steering wheel (hands fail).
+- Any human figure must be: in deep distance, in silhouette, in motion
+  blur, or out of focus. Not specified by feature.
+
+Brand-derived (stable across model generations):
+- No oversaturated colors. No HDR. No Instagram-warm color grading.
+- No drone-style aerial sweep. No "epic landscape with car heroically posed."
+- No lens flare emphasis. No motion-blur drama.
+- No prominent badging. The Audi rings appear at composition layer
+  (post-generation), not in the generated image.
+- No tourist-bucket-list framing. No travel-influencer aesthetic.
+- No comparative implication, no before/after framing, no urgency manufacture.
+- No anthropomorphizing the car (no "feels," "wants," "loves").
+```
+
+---
+
+## What This Document Does Not Include
+
+- **Per-format adaptation rules** for Story / Shorts / CTV / OOH variants. Those live in a separate format-template document; the Reel-format scaffolds above are the most demanding (vertical, motion-implied, single-frame readable) and the others derive by reduction.
+- **Performance Driver audience variants.** The same 6 cell scaffolds substitute camera angle (lower, more dynamic), light (harder directional), and composition ratio (car larger, road geometry tighter) to produce the Performance audience track. Documented separately.
+- **Per-cell measurement targets.** The case-study performance hypotheses are in `audi-spec-brief.md`; this document is operational, not predictive.
+- **Real Audi visual reference.** This is a spec project. No actual Audi imagery, IP, or campaign assets are used or referenced. The visual references are public art-historical and cinematic works invoked as DNA, not as imitation targets.
+- **Final rendered samples.** Day 3 renders 12–15 hero cells from these scaffolds for the portfolio HTML. The scaffolds are the upstream of those renders, not the renders themselves.
+
+---
+
+## Handoff Note
+
+These scaffolds are written for an operator who is not the original designer. A teammate with no prior context should be able to:
+
+1. Read the master prompt structure and understand its skeleton in 5 minutes
+2. Pick a cell, substitute the cultural-truth input, and run a generation in 10 minutes
+3. Pass the result through Gate 1 (brand voice) using the rubric in `master-idea.md`
+4. Surface 2–3 best variants per cell to the design lead for Gate 3 (final selection)
+
+If a teammate cannot do this with the scaffolds as written, the scaffolds are at fault, not the teammate. This is the operational lesson from MR.ZHU deployment failure #3, applied here directly.
+
+
+---
+
+# Audi Vorsprung Local — Anticipated Failure Modes
+## What AI Got Wrong at MR.ZHU, and how the Audi system pre-empts each at premium tier
+
+This document sits alongside the Audi spec brief, master idea, system architecture, and prompt scaffolds. Where those documents propose a system, this one stress-tests it against failure data — specifically, the three failure modes observed in actual deployment at MR.ZHU Restaurant, and the additional failures the Audi tier introduces that MR.ZHU did not test.
+
+The honest claim of this document: *the Audi spec is not a system that has never failed. It is a system designed against the specific failures that have already happened, plus an honest attempt at the failures that will appear when the same architecture meets premium-tier constraints.*
+
+---
+
+## The MR.ZHU Failure Baseline
+
+The MR.ZHU deployment surfaced three failure modes during its February–April 2025 run. These are documented in detail in the MR.ZHU case study; this document recapitulates them briefly and then extrapolates each forward to Audi tier.
+
+**Failure 1.** AI image generation does not respect controlled instruction reliably. Outputs drift across batches even with consistent prompts and reference imagery. Cherry-picking is unavoidable; cherry-pick budget must be designed in.
+
+**Failure 2.** Prompts cannot reliably describe non-standard human movement. Specific poses (mid-bite, chopstick grip, hand-cheek) require generation lottery or pose reduction. The MR.ZHU promotional Reel chose pose reduction.
+
+**Failure 3.** The MR.ZHU system was built to be run by its original designer. Handoff to a different operator would have required significant retraining and runbook authoring.
+
+These three failures inform the Audi spec's core architectural choices below.
+
+---
+
+## Failure 1 at Audi Tier — Image Drift Across Batches
+
+### Why this is worse at Audi tier
+
+At MR.ZHU, image drift across batches was tolerable because the brand context absorbed inconsistency. A slightly differently plated dish, a marginally different lighting choice across two Reels — these read as "the restaurant has range," not as system failure. Audi cannot afford that interpretive generosity. Brand discipline at premium-auto tier requires that 60 deliverables across 6 markets read as 60 instances of *one* visual logic, not as 60 close-but-not-identical interpretations of a brief.
+
+The drift problem compounds with the matrix. MR.ZHU produced one Reel at a time, reviewed solo, accepted or rejected. Audi produces 60 cells in a matrix, reviewed by multiple reviewers in parallel. A drift rate that was tolerable solo becomes catastrophic at matrix scale: small inconsistencies across cells multiply into a feed that visibly reads as machine-generated.
+
+### How the Audi spec pre-empts it
+
+Three architectural choices, each introduced specifically because of this failure:
+
+**Reference imagery anchor library (in `audi-prompt-scaffolds.md`).** The Hammershøi / Saul Leiter / Wim Wenders anchor system is not stylistic decoration. It is the operational mechanism that constrains drift. Each prompt run carries 15–20 reference frames that the model is steered against, not just prompt language describing the qualities. MR.ZHU deployment proved that prompt language alone — words like "considered," "restrained," "European" — does not produce restrained images. Reference photographs do. The Audi system makes this load-bearing.
+
+**Negative prompt block applied verbatim per cell.** MR.ZHU initially used abbreviated negative prompts and observed cliché leakage; the full block became standard mid-deployment. The Audi spec encodes this as non-optional: every per-cell prompt carries the full negative block, not a summarized version. Brevity in the negative prompt was observed to leak the cliché back in.
+
+**Designer Gate 3 reviews drift as a category, not just per-cell quality.** Most review processes evaluate each asset against the brief; drift evaluates assets against *each other.* Gate 3 in the Audi spec explicitly checks the rendered cells side-by-side, not in isolation. A cell that passes solo can fail in matrix.
+
+### What this still doesn't fully solve
+
+Even with the above, drift cannot be eliminated. The honest reading is: **drift is reduced from "ambient" to "auditable."** The system makes drift visible at Gate 3, where a designer can catch it and trigger re-generation. Without these mitigations, drift would be invisible until launch.
+
+---
+
+## Failure 2 at Audi Tier — Prompts Cannot Describe Non-Standard Human Movement
+
+### Why this is much worse at Audi tier
+
+At MR.ZHU, the photorealistic-human Reel for the student discount required heavy iteration. The team's eventual pose choice was deliberately simple ("smiling young person holding sushi roll up, slightly offset from face") because more specific poses kept failing. The audience accepted the result because casual streetfood doesn't demand high-fidelity photorealism — the AI tell is consistent with the brand's relaxed register.
+
+Audi cannot accept this trade. A premium auto brand's audience is paying for engineered honesty; an AI tell in a hero shot reads as broken trust. "Good enough on the third try" is not a workable production posture at that tier. And the failure mode is even worse for vehicles than for humans — AI image generation has known reliability gaps on automotive geometry (wheel-arch proportions, panel transitions, badge placement), gaps that are gradually narrowing but have not closed for hero-quality work.
+
+### How the Audi spec pre-empts it
+
+**Anti-pattern #6: no AI-generated photorealistic humans in hero shots.** This is the directly inherited rule. Humans appear only in silhouette, in motion, or out of focus — three framings that align both photographic merit and the AI's actual reliability envelope. The system does not attempt poses it has been observed to fail on.
+
+**Anti-pattern: prominent badging is added at composition layer, not generated.** The Audi rings are placed on rendered hero imagery as a post-generation overlay, not generated as part of the image. This is a direct response to the same reliability class — AI generation produces unreliable badge geometry, and the Audi rings are non-negotiable typographically. Composition-layer placement keeps them locked.
+
+**Vehicle reliability mitigations.** Hero cells are designed with the vehicle at small-to-medium frame size (10–22% of frame area depending on cell), three-quarters-rear or three-quarters-front angle, and never with detailed close-ups of wheels, panel transitions, or badging. These framing choices are partly aesthetic (the Wenders anchor system favors small-vehicle-in-landscape) and partly defensive — they avoid the specific shot types where AI-rendered automotive geometry fails most visibly.
+
+### What this still doesn't fully solve
+
+The system cannot produce extreme close-ups of vehicles or characters in hero quality. If the brief required them, the system would route those cells to traditional photography or hybrid AI-plus-photography pipelines outside this spec. The honest scope: this spec covers atmospheric and contextual hero work; it does not cover product close-up work.
+
+---
+
+## Failure 3 at Audi Tier — The Handoff Failure
+
+### Why this is the highest-stakes failure for LOOP
+
+At MR.ZHU, the handoff failure had a small operational cost — the system worked because KK ran it, and if MR.ZHU's team had to take over, the cost would have been retraining, not a missed launch. At LOOP, this same failure category is existential to the role's value proposition. An AI Content Designer hired by LOOP must build systems that LOOP's account, production, content, and editorial teams can actually operate. A system that requires the original designer to run it is not scalable; it is just a contractor relationship in disguise.
+
+This is the failure mode the LOOP brief most directly addresses ("Collaborate Across Teams: Align scalable output with design, content, editorial, and project planning"). The MR.ZHU deployment proved this failure happens by default if not designed against. The Audi spec is the corrective.
+
+### How the Audi spec pre-empts it
+
+**Three-gate structure with role-separated ownership.** Gate 1 (brand voice) is ownable by an editorial reviewer. Gate 2 (cultural-truth check) is ownable by a per-market local lead. Gate 3 (final selection) is ownable by the design lead or creative director. Each gate has a defined input contract and a defined output decision. No gate requires the original designer's tacit knowledge to operate.
+
+**Prompt scaffolds written for non-original-designer operators.** The handoff note in `audi-prompt-scaffolds.md` is explicit: a teammate with no prior context should be able to read the master prompt structure and understand its skeleton in 5 minutes; pick a cell, substitute the cultural-truth input, and run a generation in 10 minutes; pass the result through Gate 1 using the rubric in `master-idea.md`. If a teammate cannot do this, the scaffolds are at fault, not the teammate.
+
+**Cultural-truth input slots filled by local market leads, not by the designer.** This is the architectural choice that makes the system genuinely portable. If cultural truth lived inside the designer's head, every new market would require designer involvement at the input layer. By moving cultural truth to a local-lead slot, the designer's role becomes architectural, not per-cell. New markets onboard by adding a local lead and a cultural-truth input contract, not by requiring designer time.
+
+### What this still doesn't fully solve
+
+The architectural separation of concerns reduces handoff friction but does not eliminate it. There remains an irreducible amount of per-system tacit knowledge — when to override a brand-voice classifier, when a cultural-truth flag is or isn't a real concern, when to trigger re-generation versus accept a borderline output. This judgment cannot be fully documented; it can only be transferred through worked examples and shadow review periods. The Audi spec assumes a 2–3 cycle handoff period during which the original designer co-reviews with the new operator before stepping back to architectural-only involvement.
+
+---
+
+## Failures Audi Tier Will Add That MR.ZHU Did Not Test
+
+Honest extrapolation: the MR.ZHU deployment did not test everything the Audi system architecturally claims to handle. Four failure categories will surface at Audi tier that did not appear at restaurant tier.
+
+**1. Brand voice classifier false negatives at scale.**
+A short voice-rule rubric works at MR.ZHU's volume because the designer reads every output anyway. At 60-cell Audi scale, the rubric has to actually catch deviations the designer did not see. False negatives — voice deviations that the classifier passes — will show up. Mitigation: rubric expansion per cycle, with each false negative becoming a new rubric rule. The rubric grows; the catch rate improves edition over edition.
+
+**2. Cultural-truth slippage that local team approves but local audience rejects.**
+A local market lead may approve a hero asset that reads as authentically local but is in fact tourist-cliché framed in a way the local audience rejects. This is the failure that does not get caught by the system; it gets caught post-launch. Mitigation: limited soft-launch per market hero before full matrix scale-out; first-week social listening review; rapid iteration capacity.
+
+**3. Compliance stack maintenance burden.**
+The Audi spec's compliance layer (C2PA provenance, AI Act watermarks, EU-residency model endpoints, brand voice classifier audit logs) is auditable but expensive to maintain as models, regulations, and provider endpoints all shift. Mitigation: quarterly compliance review with explicit ownership at the agency-tier ops level, not at the per-campaign tier.
+
+**4. Variant generation cost scale-up.**
+Per-cell generation cost is small; 60 cells across multiple campaign cycles per year is meaningful. Mitigation: a generation budget per campaign, surfaced at Gate 1 review (not at month-end), so the production team sees real-time cost-per-cell instead of discovering the bill afterward.
+
+These four failures are anticipated, not observed. The spec is honest about this: documenting expected failure modes pre-deployment is part of the system's design discipline, not evidence that the system has been deployed.
+
+---
+
+## What This Section Is, and What It Is Not
+
+This document is **anticipated failure analysis based on observed deployment data**, not measured Audi-specific failure data. The Audi spec has not been deployed; it cannot have measured failure rates. The discipline of this document is: take what failed at MR.ZHU, take what is predictable about premium-tier production, and design specifically against both, with the design choices traceable to the failure they address.
+
+A spec that does not surface its anticipated failure modes is unfinished. A spec that surfaces them and labels them honestly — observed, anticipated, mitigated, residual — is the kind of design artifact that survives review by an experienced agency creative director. The point of this document is to be the artifact that survives that review.
+
+LOOP's brief asks for "experiment & validate — test tools and approaches in live environments and focus on what delivers actual value." Pre-emptive failure analysis is what allows the tests in the live environment to be diagnostic rather than expensive. This section is that pre-emption, on paper, before it becomes deployment cost.
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+  <script>
+    const md = document.getElementById('md-content').textContent;
+    document.getElementById('content').innerHTML = marked.parse(md);
+  </script>
+</body>
+</html>

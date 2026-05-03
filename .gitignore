@@ -1,0 +1,5 @@
+# Local working / backup folders not part of the published site
+assets/audi/_originals/
+.DS_Store
+Thumbs.db
+*.tmp
