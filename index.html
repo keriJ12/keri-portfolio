@@ -523,11 +523,16 @@ header.site {
 }
 .outside-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.1fr 1.1fr 0.8fr;
+  gap: 2.4rem;
+}
+@media (max-width: 960px) {
+  .outside-grid { grid-template-columns: 1fr 1fr; }
+  .outside-currently { grid-column: 1 / -1; }
 }
 @media (max-width: 720px) {
   .outside-grid { grid-template-columns: 1fr; }
+  .outside-currently { grid-column: auto; }
 }
 .outside-item h4 {
   font-family: 'Fraunces', serif;
@@ -541,6 +546,44 @@ header.site {
   color: var(--ink-soft);
   line-height: 1.7;
   margin: 0.4rem 0;
+}
+
+/* Currently — field-notes column */
+.outside-currently {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.2rem;
+}
+.outside-currently h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 1rem;
+}
+.outside-currently ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.outside-currently li {
+  font-family: 'Fraunces', serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0 0 0.85rem;
+}
+.outside-currently li strong {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.15rem;
+  font-style: normal;
 }
 
 /* ==== Full case bodies ==== */
@@ -1035,6 +1078,16 @@ footer.site a { color: var(--ink-soft); }
         AIGrowth Lab is partly the proof of this practice — what I read becomes what I ship, or it doesn't count as read.
       </p>
     </div>
+
+    <aside class="outside-currently">
+      <h4>Currently</h4>
+      <ul>
+        <li><strong>Learning</strong>Multi-agent content workflows</li>
+        <li><strong>Training</strong>Strength + mobility, 4× weekly</li>
+        <li><strong>Testing</strong>Claude Skills as reusable production primitives</li>
+        <li><strong>Biking</strong>Drauradweg + Carinthia alpine routes</li>
+      </ul>
+    </aside>
   </div>
 </section>
 
