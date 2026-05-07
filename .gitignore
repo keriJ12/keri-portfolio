@@ -1,5 +1,22 @@
-# Local working / backup folders not part of the published site
-assets/audi/_originals/
+# Working / archive files (not part of live site)
+_archive/
+new-content/
+Portfolio_QC/
+
+# OS
 .DS_Store
 Thumbs.db
-*.tmp
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Source files (HTML deployed as index.html instead)
+v2-mockup.html
+v2-mockup-zh.html

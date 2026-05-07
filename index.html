@@ -1,148 +1,922 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keri Janschitz — AI Content Designer</title>
-  <meta name="description" content="Portfolio of Keri Janschitz, AI Content Designer. Scalable, AI-supported content production systems for European brands. +550% Reel views in real deployment.">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/main.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keri Janschitz — Production System Architect</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F3EEE6;
+  --surface: #FBF7F0;
+  --ink: #1E1A17;
+  --ink-soft: #5C554D;
+  --ink-faint: #9A7B6F;
+  --rule: #D8D0C4;
+  --rule-soft: #E4DCD0;
+  --accent: #8D6F63;
+  --accent-deep: #6D5447;
+  --accent-soft: #E8D6C8;
+  --maxw: 1080px;
+  --maxw-narrow: 720px;
+  --frame-radius: 22px;
+}
+
+.frame {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--frame-radius);
+  max-width: 1080px;
+  margin: 0 1.5rem 2rem;
+  position: relative;
+  box-shadow:
+    0 1px 2px rgba(120, 95, 55, 0.04),
+    0 4px 8px rgba(120, 95, 55, 0.05),
+    0 16px 40px rgba(120, 95, 55, 0.08);
+}
+@media (min-width: 1140px) {
+  .frame {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 720px) {
+  .frame {
+    margin: 0 1rem 1rem;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--ink); }
+
+/* ==== Sticky header ==== */
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(250, 249, 246, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.1rem 2rem;
+}
+.nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.brand {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.menu {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 0.85rem;
+}
+.menu a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.menu a:hover { color: var(--accent); }
+
+/* ==== Hero ==== */
+.hero {
+  margin: 1.5rem auto;
+  padding: 5rem 4rem 4.5rem;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 4rem;
+  align-items: start;
+}
+.hero-text .name-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1.5rem;
+}
+.hero-text h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 3.2rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem;
+  max-width: 18ch;
+}
+.hero-text .thesis {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 56ch;
+  margin: 0 0 2rem;
+}
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.hero-cta a {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.hero-cta a.primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+.hero-cta a.primary:hover {
+  background: var(--accent);
+}
+.hero-cta a.secondary {
+  border: 1px solid var(--rule);
+  color: var(--ink);
+}
+.hero-cta a.secondary:hover {
+  border-color: var(--ink);
+}
+
+.hero-portrait {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background: var(--accent-soft);
+  overflow: hidden;
+  position: relative;
+}
+.hero-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 2rem; }
+  .hero-portrait { width: 140px; height: 140px; }
+  .hero-text h1 { font-size: 2.2rem; }
+}
+
+/* ==== Career-arc spine ==== */
+.career-arc {
+  margin: 1.5rem auto;
+  padding: 4rem 4rem;
+}
+.career-arc-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.career-arc .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 1.5rem;
+}
+.career-arc p {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  margin: 1rem 0;
+}
+.career-arc p.kicker {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--accent);
+  margin-top: 2.5rem;
+  line-height: 1.5;
+}
+
+/* ==== Metrics ==== */
+.metrics {
+  margin: 1.5rem auto;
+  padding: 3.5rem 4rem;
+}
+.metrics .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 2rem;
+}
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 720px) {
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.metric .num {
+  font-family: 'Fraunces', serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+}
+.metric .desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ==== Cases ==== */
+.cases {
+  margin: 1.5rem auto;
+  padding: 4rem 4rem;
+}
+.cases .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 2.5rem;
+}
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+@media (max-width: 720px) {
+  .case-grid { grid-template-columns: 1fr; }
+}
+.case-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+}
+.case-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.08);
+  border-color: var(--ink-faint);
+}
+.case-card .preview {
+  aspect-ratio: 4/3;
+  background: #1a1a1a;
+  overflow: hidden;
+  position: relative;
+}
+.case-card .preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.case-card:hover .preview img { transform: scale(1.03); }
+.case-card .body {
+  padding: 1.5rem 1.8rem 1.8rem;
+}
+.case-card .meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.case-card .kind {
+  color: var(--accent);
+}
+.case-card .year {
+  color: var(--ink-faint);
+}
+.case-card h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.015em;
+}
+.case-card .anchor {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--accent);
+  margin: 0 0 0.8rem;
+  font-weight: 500;
+}
+.case-card .arrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+
+/* ==== Approach ==== */
+.applies {
+  margin: 1.5rem auto;
+  padding: 4rem 4rem;
+}
+.applies .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 2rem;
+}
+.applies h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: -0.015em;
+  margin: 0 0 2.5rem;
+  max-width: 26ch;
+}
+.applies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+@media (max-width: 720px) {
+  .applies-grid { grid-template-columns: 1fr; }
+}
+.applies-grid h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0 0 0.6rem;
+}
+.applies-grid p {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0.4rem 0;
+}
+.applies-grid .ev {
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  margin-top: 0.9rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--rule);
+  font-style: italic;
+}
+
+/* ==== Principles ==== */
+.principles {
+  margin: 1.5rem auto;
+  padding: 4rem 4rem;
+}
+.principles .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 1.5rem;
+}
+.principles h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.7rem;
+  max-width: 22ch;
+}
+.principles .preamble {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 56ch;
+  margin: 0 0 3rem;
+  line-height: 1.65;
+}
+.principle-list {
+  display: flex;
+  flex-direction: column;
+}
+.principle {
+  display: grid;
+  grid-template-columns: 50px 1fr 1.4fr;
+  gap: 2rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid var(--rule);
+  align-items: start;
+}
+.principle:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.principle .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  padding-top: 0.2rem;
+}
+.principle .title {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.18rem;
+  line-height: 1.3;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  padding-top: 0.1rem;
+}
+.principle .body {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+@media (max-width: 720px) {
+  .principle {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+}
+
+/* ==== Outside ==== */
+.outside {
+  margin: 1.5rem auto 3rem;
+  padding: 4rem 4rem;
+}
+.outside .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 1.5rem;
+}
+.outside h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: -0.015em;
+  margin: 0 0 2.5rem;
+  max-width: 24ch;
+}
+.outside-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+@media (max-width: 720px) {
+  .outside-grid { grid-template-columns: 1fr; }
+}
+.outside-item h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.18rem;
+  margin: 0 0 0.7rem;
+  color: var(--ink);
+}
+.outside-item p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0.4rem 0;
+}
+
+/* ==== Full case bodies ==== */
+.full-cases {
+  margin: 1.5rem auto;
+  padding: 4rem 4rem;
+}
+.full-cases .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 1rem;
+}
+.full-cases > h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: -0.015em;
+  margin: 0 0 2.5rem;
+}
+.case-body {
+  border-top: 1px solid var(--rule);
+  padding: 2.5rem 0;
+}
+.case-body:last-child { border-bottom: 1px solid var(--rule); }
+.case-body h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.4rem;
+}
+.case-body .anchor {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin: 0 0 1.5rem;
+}
+.case-body h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--ink);
+}
+.case-body p {
+  font-size: 0.96rem;
+  line-height: 1.8;
+  color: var(--ink-soft);
+  margin: 0.5rem 0;
+}
+.case-body ul {
+  font-size: 0.96rem;
+  line-height: 1.8;
+  color: var(--ink-soft);
+  margin: 0.5rem 0;
+  padding-left: 1.4rem;
+}
+.case-body ul li { margin: 0.3rem 0; }
+
+/* ==== Footer ==== */
+footer.site {
+  border-top: 1px solid var(--rule);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+footer.site a { color: var(--ink-soft); }
+</style>
 </head>
 <body>
 
-  <header class="site">
-    <div class="nav">
-      <a href="./" class="brand">Keri Janschitz</a>
-      <nav class="menu">
-        <a href="#cases">Cases</a>
-        <a href="#about">About</a>
-        <a href="mailto:kerijanschitz@outlook.com">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="site">
+  <div class="nav">
+    <a href="#" class="brand">Keri Janschitz</a>
+    <nav class="menu">
+      <a href="#cases">Cases</a>
+      <a href="#applies">Approach</a>
+      <a href="#principles">Principles</a>
+      <a href="#full-cases">Case Studies</a>
+      <a href="mailto:kerijanschitz@outlook.com">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <section class="hero">
-    <p class="name">Keri (Shu Jung) Janschitz · AI Content Designer</p>
-    <h1>Scalable content systems that turn one input into many.</h1>
+<!-- HERO -->
+<section class="hero frame">
+  <div class="hero-text">
+    <p class="name-tag">Keri (Shu Jung) Janschitz · Production System Architect</p>
+    <h1>I design the production logic behind content that scales.</h1>
     <p class="thesis">
-      I design AI-supported content production pipelines that scale across teams, markets, and formats. Eight years of operational systems work, three years applying AI to live deployment, one paying client at +550% Reel views, and a working spec for what the same architecture looks like at LOOP-tier client scale.
+      Eight years of operational systems work in textile production. Two years of integrating AI into real client deployments. Four case studies that map a single thinking pattern — system before AI, AI as accelerator — across compliance work, information architecture, parallel pipelines, and content production.
     </p>
-    <div class="meta">
-      <span><strong>Based in</strong> Nötsch im Gailtal, Carinthia (AT)</span>
-      <span><strong>Languages</strong> EN C1 · DE B2 · ZH native</span>
-      <span><strong>Currently</strong> Product Development & Project Lead, Seidra Textilwerke</span>
+    <div class="hero-cta">
+      <a href="#cases" class="primary">View case studies →</a>
+      <a href="mailto:kerijanschitz@outlook.com" class="secondary">Get in touch</a>
     </div>
-  </section>
+  </div>
+  <div class="hero-portrait">
+    <img src="./portfolio/assets/hero/keri-portrait.jpg?v=5" alt="Keri Janschitz portrait" />
+  </div>
+</section>
 
-  <section class="metrics">
-    <p class="label">Numbers that ground this portfolio</p>
-    <div class="metrics-grid">
-      <div class="metric">
-        <p class="num">+550%</p>
-        <p class="desc">Monthly Reel views at MR.ZHU Restaurant deployment, Klagenfurt 2025</p>
-      </div>
-      <div class="metric">
-        <p class="num">4 → 1.5</p>
-        <p class="desc">Months prep time for Munich Fabric Start trade fair, edition 1 → edition 8</p>
-      </div>
-      <div class="metric">
-        <p class="num">34</p>
-        <p class="desc">Workflow-automation experiments published on AIGrowth Lab to date</p>
-      </div>
-      <div class="metric">
-        <p class="num">60</p>
-        <p class="desc">Cell variant matrix designed for Audi e-tron multi-market spec</p>
-      </div>
+<!-- CAREER ARC -->
+<section class="career-arc frame">
+  <div class="career-arc-inner">
+    <p class="label">My path here</p>
+    <p>
+      Eight years before I touched AI, I was already being forced into systems thinking. Munich Fabric Start trade-fair preparation compressed from four months to one and a half — across 8 editions, 2022 to 2026 — through documentation, role-handoff design, and edition-over-edition refinement. Not AI. Production volume.
+    </p>
+    <p>
+      AI arrived in 2024 at the edges of that pipeline: color forecasting, booth design candidate generation. Not as a replacement for the system. As an accelerator on a system that already worked.
+    </p>
+    <p>
+      In early 2025 I took the same toolkit to Mr Zhu Restaurant in Klagenfurt — a real-world deployment of system-thinking applied to AI content production. +550% monthly Reel views. From March 2026 onward, AIGrowth Lab as my system R&D project — five locked production frameworks codifying what works.
+    </p>
+    <p class="kicker">
+      AI didn't teach me to think this way. Production volume did. AI arrived to a system that was ready.
+    </p>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics frame">
+  <p class="label">Numbers that anchor this portfolio</p>
+  <div class="metrics-grid">
+    <div class="metric">
+      <p class="num">+550%</p>
+      <p class="desc">Monthly Reel views, MR.ZHU real-world deployment, Klagenfurt 2025</p>
     </div>
-  </section>
-
-  <section class="cases" id="cases">
-    <p class="label">Four cases · Four shapes of system work</p>
-    <div class="case-grid">
-
-      <a href="./cases/mrzhu/" class="case-card">
-        <div class="cover">
-          <img src="./assets/mrzhu/mrzhu-brand-composite.jpg" alt="MR.ZHU Chinese Streetfood — brand composite of food and restaurant photography">
-        </div>
-        <div class="body">
-          <p class="kind">Hero · Real Client Deployment</p>
-          <h3>MR.ZHU Chinese Streetfood</h3>
-          <p class="summary">A solo-designer content system delivered +550% monthly Reel views for a Klagenfurt restaurant client over three months. Multi-channel (Instagram + Google Business), trilingual, EU AI Act-aligned disclosure already in production.</p>
-          <p class="stat">Klagenfurt · Feb–Apr 2025 · 19 system Reels</p>
-        </div>
-      </a>
-
-      <a href="./cases/audi/" class="case-card">
-        <div class="cover">
-          <img src="./assets/audi/audi-at-reel-lifestyle-v1.png" alt="">
-        </div>
-        <div class="body">
-          <p class="kind">Co-Hero · Spec Project</p>
-          <h3>Audi Vorsprung Local</h3>
-          <p class="summary">A spec system that turns one Audi e-tron creative idea into a 60-cell variant matrix across six European markets. Designed end-to-end: brief, master idea, system architecture, prompt scaffolds with reference imagery anchors, anticipated failure analysis, EU AI Act compliance layer.</p>
-          <p class="stat">Spec · 6 markets × 5 formats × 2 audiences · 6 hero cells rendered</p>
-        </div>
-      </a>
-
-      <a href="./cases/agl/" class="case-card">
-        <div class="cover">
-          <div class="cover-typography">
-            <p class="typo-mark">AIGrowthLabEU</p>
-            <p class="typo-title">A daily log of operational experiments</p>
-            <p class="typo-sub">— what I learn doesn't count until I can ship something with it.</p>
-          </div>
-        </div>
-        <div class="body">
-          <p class="kind">Practice · Daily Public Log</p>
-          <h3>AIGrowth Lab</h3>
-          <p class="summary">A daily public log of workflow-automation and AI-assisted-deployment experiments. Each post is one operational test; the output is the evidence the experiment was run. Five locked design systems emerged as side artifacts.</p>
-          <p class="stat">@aigrowthlabeu · Daily since 22 Mar 2026 · 34 experiments</p>
-        </div>
-      </a>
-
-      <a href="./cases/munich/" class="case-card">
-        <div class="cover">
-          <div class="cover-typography cream">
-            <p class="typo-mark">Seidra · 2022–2026</p>
-            <p class="typo-title">8 editions. 4 → 1.5 months prep.</p>
-            <p class="typo-sub">— systems thinking before AI; AI as the accelerator on top.</p>
-          </div>
-        </div>
-        <div class="body">
-          <p class="kind">Track Record · Pre-AI Foundation</p>
-          <h3>Munich Fabric Start Playbook</h3>
-          <p class="summary">An 8-edition trade-fair playbook at Seidra Textilwerke. Prep time compressed from 4 months to 1.5 months across 2022–2026. Editions 1–5 were pure systematization; AI integrated only at editions 6–8 as accelerator. Systems thinking is the substrate, not the AI.</p>
-          <p class="stat">Seidra Textilwerke · 8 editions · 2022–2026 · 62.5% prep-time reduction</p>
-        </div>
-      </a>
-
+    <div class="metric">
+      <p class="num">~70%</p>
+      <p class="desc">Cross-team workflow time reduction in textile R&D pipeline (9-yr sustained)</p>
     </div>
-  </section>
+    <div class="metric">
+      <p class="num">10×</p>
+      <p class="desc">Volume growth with co-development client across 4 years and 8 collection cycles</p>
+    </div>
+    <div class="metric">
+      <p class="num">5</p>
+      <p class="desc">Locked production frameworks codifying brand-agnostic content pipelines</p>
+    </div>
+  </div>
+</section>
 
-  <section class="about" id="about">
-    <h2>About</h2>
-    <p>
-      I'm Keri Janschitz — Product Development & Project Lead at Seidra Textilwerke (Draschitz, Carinthia) since 2017, and an AI Content Designer applying that systems-and-operations background to AI-augmented content production since 2025.
-    </p>
-    <p>
-      The work in this portfolio is anchored in two beliefs that the LOOP brief frames clearly: that <em>AI is a system, not a tool</em>, and that <em>scalable workflows are built by leading with output, not framework decks</em>. Both align with how I have already worked, with and without AI, for years.
-    </p>
-    <p>
-      The portfolio's four cases are deliberately different shapes. <a href="./cases/mrzhu/">MR.ZHU</a> is a real client deployment with measurable outcome. <a href="./cases/audi/">Audi Vorsprung Local</a> is a spec extension at LOOP-tier scale. <a href="./cases/agl/">AIGrowth Lab</a> is an ongoing public practice of daily experimentation. <a href="./cases/munich/">Munich Fabric Start</a> is the 4-year operational foundation underneath all of it. Together they answer different questions a hiring manager might ask, with different kinds of evidence.
-    </p>
-    <p>
-      Open to AI Content Designer roles in DACH. Currently applying to LOOP Salzburg.
-    </p>
-    <p style="margin-top: 2rem;">
-      <strong>Reach me</strong> · <a href="mailto:kerijanschitz@outlook.com">kerijanschitz@outlook.com</a>
-    </p>
-  </section>
+<!-- CASES -->
+<section class="cases frame" id="cases">
+  <p class="label">Four case studies · Four shapes of system work</p>
+  <div class="case-grid">
 
-  <footer class="site">
-    <p>
-      Portfolio source: <a href="https://github.com/keriJ12/keri-portfolio" target="_blank" rel="noopener">github.com/keriJ12/keri-portfolio</a> · Built in 5 days, May 2026
-    </p>
-  </footer>
+    <a href="#case-1" class="case-card">
+      <div class="preview">
+        <img src="./portfolio/assets/dutch-mod/dutch-mod-tender.png" alt="Editorial still life of layered technical documents and leather portfolio on dark walnut worktable" />
+      </div>
+      <div class="body">
+        <div class="meta-row">
+          <span class="kind">Compliance Workflow</span>
+          <span class="year">4-yr sustained</span>
+        </div>
+        <h3>Dutch Ministry of Defense Tender</h3>
+        <p class="anchor">Self-evolving compliance system + AI Regulation Diff</p>
+        <p class="arrow">Read full case →</p>
+      </div>
+    </a>
+
+    <a href="#case-2" class="case-card">
+      <div class="preview">
+        <img src="./portfolio/assets/collection/munich/munich-fabric-hero.jpg" alt="Textile fabric weaves in earth tones" />
+      </div>
+      <div class="body">
+        <div class="meta-row">
+          <span class="kind">Information Architecture</span>
+          <span class="year">2017 — present</span>
+        </div>
+        <h3>Cross-Team Information Architecture for Textile R&D</h3>
+        <p class="anchor">~70% cross-team alignment time reduction</p>
+        <p class="arrow">Read full case →</p>
+      </div>
+    </a>
+
+    <a href="#case-3" class="case-card">
+      <div class="preview">
+        <img src="./portfolio/assets/collection/munich/munich-booth-wide.jpg?v=2" alt="Seidra booth at Munich Fabric Start with Intuition AW 25/26 collection wall" />
+      </div>
+      <div class="body">
+        <div class="meta-row">
+          <span class="kind">Parallel Pipelines</span>
+          <span class="year">2022 — 2026 · 8 editions</span>
+        </div>
+        <h3>Munich + Gottseidank Parallel Collections</h3>
+        <p class="anchor">10× growth · 4mo → 1.5mo trade-fair prep</p>
+        <p class="arrow">Read full case →</p>
+      </div>
+    </a>
+
+    <a href="#case-4" class="case-card">
+      <div class="preview">
+        <img src="./portfolio/assets/recent-ai-content/mrzhu/mrzhu-brand-composite.jpg" alt="MR.ZHU Chinese Streetfood brand composite mood-board" />
+      </div>
+      <div class="body">
+        <div class="meta-row">
+          <span class="kind">AI Content Production</span>
+          <span class="year">2025 — present</span>
+        </div>
+        <h3>AI Content Production System</h3>
+        <p class="anchor">+550% real-world deployment · 5 reusable production frameworks</p>
+        <p class="arrow">Read full case →</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="applies frame" id="applies">
+  <p class="label">Approach</p>
+  <h2>Where this thinking applies — and the evidence behind each pattern.</h2>
+  <div class="applies-grid">
+    <div>
+      <h4>Multi-market campaign rollout</h4>
+      <p>One approved hero idea adapted across markets, formats, audiences — brand voice locked at master layer, cultural truth filled at input layer per market.</p>
+      <p class="ev">→ Munich + Gottseidank parallel pipelines, 4 yr / 8 ed</p>
+    </div>
+    <div>
+      <h4>Brand-coherent variant generation</h4>
+      <p>Multiple visual archetypes operating under one voice rubric and one anti-pattern config — feed reads as one brand, not as five disconnected templates.</p>
+      <p class="ev">→ Mr Zhu real-world deployment, 5-archetype mix</p>
+    </div>
+    <div>
+      <h4>Compliance-aware AI integration</h4>
+      <p>AI used to amplify what's already systematized — never to substitute the systematization itself. Human gates placed where the stakes can't be outsourced.</p>
+      <p class="ev">→ Dutch MoD 4-yr compliance workflow + Regulation Diff</p>
+    </div>
+    <div>
+      <h4>Reusable production infrastructure</h4>
+      <p>Methodology codified into testable production frameworks (SKILL files) — brand-agnostic, swappable configuration, transferable to new operators without retraining the system.</p>
+      <p class="ev">→ AIGrowth Lab, 5 locked production frameworks</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="principles frame" id="principles">
+  <p class="label">Principles I come back to</p>
+  <h2>The instincts behind the four cases.</h2>
+  <p class="preamble">
+    The way I work is shaped as much by these principles as it is by craft. I come back to them when the work gets messy, ambiguous, or high-stakes — and they are visible, in different shapes, in every case study above.
+  </p>
+
+  <div class="principle-list">
+    <div class="principle">
+      <div class="num">01</div>
+      <div class="title">Architecture before populating it.</div>
+      <div class="body">A system has to be designed before it's filled. Whether it's a trilingual compliance matrix for defense procurement, a cross-team information architecture for textile R&D, or a five-archetype output system for restaurant content — the work that matters is upstream of the work that ships.</div>
+    </div>
+
+    <div class="principle">
+      <div class="num">02</div>
+      <div class="title">Systems first, AI second.</div>
+      <div class="body">AI doesn't teach systems thinking. Production volume does. The strongest AI integration I have ever shipped — Munich Fabric Start prep compressed from four months to one and a half — only worked because the system existed first across editions one through five. AI joined as the accelerator at edition six, never as the substitute.</div>
+    </div>
+
+    <div class="principle">
+      <div class="num">03</div>
+      <div class="title">Anti-pattern lists beat positive guidance.</div>
+      <div class="body">What a system won't produce is more important than what it will. Brand voice rules, deployment safeguards, AI photorealism boundaries — they all live as anti-patterns first. "Don't do X" is shorter, sharper, and more enforceable than "always do Y."</div>
+    </div>
+
+    <div class="principle">
+      <div class="num">04</div>
+      <div class="title">The hardest problem is human review.</div>
+      <div class="body">AI generates faster than humans review. The whole production-cost-reduction story lives in correctly placing the gates, not in correctly placing the tools. I have shipped systems that worked because I held the gate. I have also shipped systems that failed at handoff because the gate wasn't designed for someone else to hold.</div>
+    </div>
+
+    <div class="principle">
+      <div class="num">05</div>
+      <div class="title">Output is the test of comprehension.</div>
+      <div class="body">What I think I understand doesn't count until I can ship something with it. Every concept I have encountered in the last two years has had to take operational form within twenty-four hours, or it doesn't count as learned. AIGrowth Lab is that discipline applied to my own learning.</div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTSIDE -->
+<section class="outside frame">
+  <p class="label">What I do outside the four cases</p>
+  <h2>The two practices that keep me current and sustained.</h2>
+
+  <div class="outside-grid">
+    <div class="outside-item">
+      <h4>I train hard.</h4>
+      <p>
+        Fitness is investment, not indulgence. Strength training, mobility, cardiovascular work — these are how I stay at the best state for the work that demands sustained focus. Eight years in operations taught me that the people who ship for years are the ones who treat their health as production capacity, not as a perk.
+      </p>
+      <p>
+        (LOOP's free sports and fitness benefit was the first thing in the JD that made me smile.)
+      </p>
+    </div>
+
+    <div class="outside-item">
+      <h4>I keep current.</h4>
+      <p>
+        New AI tools, new patterns, new tradeoffs — I follow them weekly because the field doesn't slow down. The discipline isn't to chase every release; it's to read enough to know which ones change the shape of production work, and which ones are just noise.
+      </p>
+      <p>
+        AIGrowth Lab is partly the proof of this practice — what I read becomes what I ship, or it doesn't count as read.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FULL CASE BODIES -->
+<section class="full-cases frame" id="full-cases">
+  <p class="label">Case Studies · Full versions</p>
+  <h2>The four cases, in detail.</h2>
+
+  <div class="case-body" id="case-1">
+    <h3>Case 1 — Dutch MoD Tender</h3>
+    <p class="anchor">4 years sustained · Same buyer, third full cycle in four years · AI Regulation Diff</p>
+
+    <h4>Problem.</h4>
+    <p>Military procurement is a zero-tolerance environment — Dutch-only documentation, exhaustive specifications, every clause mapped to compliance risk and explicit financial penalty. None of the elasticity of a normal commercial brief.</p>
+
+    <h4>Approach.</h4>
+    <p>My first reaction wasn't "this is hard" — it was that the bottleneck here isn't technical, it's the information flow. Five internal teams, three working languages, one Dutch source — so in week one I didn't touch the specifications. I built the information architecture first: a trilingual briefing plus a compliance matrix where each team saw the clauses they owned, the priorities, and the deadlines backed out for them. One voice out, one clear ownership chain running from R&D to the Italian finishing mill.</p>
+
+    <h4>AI in 2026.</h4>
+    <p>When the same tender returned, I ran the new package through an AI diff against the 2023 baseline — every changed clause, shifted penalty, tightened spec surfaced before kick-off. Decisions stayed with me; risk review and alignment time dropped sharply. AI is the amplifier, not the decision-maker.</p>
+
+    <h4>Result.</h4>
+    <ul>
+      <li>2024 delivery: on-time, zero penalties, zero breaches</li>
+      <li>2026: same buyer, third full cycle in four years</li>
+      <li>Architecture is now Seidra's standard playbook for tender-shaped work</li>
+    </ul>
+  </div>
+
+  <div class="case-body" id="case-2">
+    <h3>Case 2 — Cross-Team Information Architecture</h3>
+    <p class="anchor">9 years sustained · ~70% cross-team alignment time reduction</p>
+
+    <h4>Problem.</h4>
+    <p>When I took over R&D, the same fabric model often had multiple drifting versions of its technical data sheet, none in a consistent format. Production couldn't find the latest dye-finish parameters. QA might be working from an outdated spec. Commercial didn't know which version held the cost and lead time. Every new model needed multiple alignment passes before five departments were on the same page.</p>
+
+    <h4>Approach.</h4>
+    <p>This wasn't a document problem — it was an information architecture problem. Templating the layout would have tidied the surface but left "who needs what" untouched, and alignment time would barely move. So I designed three principles instead: single source of truth (one sheet per model, never multiple drifting copies), role-based readability (production / QA / commercial / logistics each find their section in the same fixed place), and extensible structure (new compliance clauses or customer demands layer in — they don't trigger a rebuild).</p>
+
+    <h4>AI later.</h4>
+    <p>AI handles cross-language versions of the technical sheet and the front-end of the customer sample workflow — I verify and lock. The architecture decides what counts as truth; AI scales how fast that truth moves.</p>
+
+    <h4>Result.</h4>
+    <ul>
+      <li>Cross-team alignment time reduced by ~70% per new model</li>
+      <li>Core architecture stable across nine years — new compliance clauses, new customer requirements layered in without rebuilding</li>
+      <li>Customers like Frauenschuh and Göttmann align <em>to</em> the standardized sample workflow rather than negotiate it</li>
+      <li>Same architecture quietly underpins Case 3's two parallel pipelines</li>
+    </ul>
+  </div>
+
+  <div class="case-body" id="case-3">
+    <h3>Case 3 — Munich + Gottseidank Parallel Collections</h3>
+    <p class="anchor">8 editions sustained · 10× volume growth · 4mo → 1.5mo trade-fair prep</p>
+
+    <h4>Problem.</h4>
+    <p>Two apparel collection pipelines running in parallel for four years, both seasonal, both built on the same weave + jacquard product lines — but with completely different decision logics underneath. Munich was self-driven: I owned the theme, the booth, the buyer conversations, the post-show conversion. Gottseidank was co-developed: the customer entered at the research stage and built the cloth with us — not picking from existing.</p>
+
+    <h4>Approach.</h4>
+    <p>Owning two pipelines at once isn't about workload — it's a discipline problem. Munich gave me high creative freedom; the discipline came from filtering trends through "can this actually convert into orders." Gottseidank gave me low creative freedom; the discipline came from translating brand DNA precisely into production-ready cloth. Same product infrastructure, two completely different commercial reasoning models. Both pipelines run on the Case 2 information architecture underneath, so neither one collapses under the other's weight.</p>
+
+    <h4>AI from 2024.</h4>
+    <p>Trend and color analysis (WGSN feeds + customer history + market data) integrated by AI, translated into commercial decisions by me. Booth visual ideation accelerated with ChatGPT and Midjourney as moodboards, never as final output. Sample-system front-end accelerated — most of the 4mo → 1.5mo reduction came from there.</p>
+    <p>Areas intentionally kept human-led: Gottseidank co-development, Munich theme calls, every buyer conversation on the floor.</p>
+
+    <h4>Result.</h4>
+    <ul>
+      <li>Gottseidank: ~2,000 m/yr → 20,000+ m/yr sustained, four years of co-development</li>
+      <li>Munich: 8 consecutive editions, prep down from 4 months to 1.5</li>
+      <li>2-person team has internalized both playbooks; I now do final review only</li>
+    </ul>
+  </div>
+
+  <div class="case-body" id="case-4">
+    <h3>Case 4 — AI Content Production System</h3>
+    <p class="anchor">Mr Zhu real-world deployment · AIGrowth Lab system R&D · 5 reusable production frameworks</p>
+
+    <h4>Problem.</h4>
+    <p>Two years of input on AI tools — reading, testing, threading them quietly into Seidra workflows — but studying tools doesn't automatically build a production system. Mr Zhu and AIGrowth Lab are where I committed to ship nine years of systems thinking and two years of AI input as actual output.</p>
+
+    <h4>Approach.</h4>
+    <p>Mr Zhu was the early version of the system, deployed in a live hospitality environment over three months across IG and Google Business. The first month was exploratory. The second month three things locked — a copy structure, a posting cadence, and a Claude prompt structure inside a dedicated workspace. The third month ran on the templates. AIGrowth Lab is what came after: same logic, evolved into a system R&D project. The deliverable isn't the account — it's five brand-agnostic production frameworks (codified as SKILL files): carousel format, narrative post, Reel cover scoring, each as its own production line, configurable for a different brand without rebuilding the system.</p>
+
+    <h4>Where AI sits.</h4>
+    <p>AI runs production volume — drafts, layouts, format compliance, version diffs. The judgment layer stays human: which idea ships, where the brand voice lands, what the audience actually feels. Codifying that boundary into rules someone else can run is how individual judgment becomes a transferable system.</p>
+
+    <h4>Result.</h4>
+    <ul>
+      <li>Mr Zhu: +550% Reel views over the deployment, walk-in inquiries lifted (per business owner observation)</li>
+      <li>AIGrowth Lab: 5 brand-agnostic, reusable production frameworks</li>
+      <li>Validated Reel cover formula turned from intuitive judgment into a repeatable scoring rule — usable by someone else</li>
+      <li>Same architecture would scale across Audi / Breitling / Puma at LOOP — configuration changes, spine doesn't</li>
+    </ul>
+  </div>
+
+</section>
+
+<footer class="site">
+  <p>© 2026 Keri Janschitz · <a href="mailto:kerijanschitz@outlook.com">kerijanschitz@outlook.com</a> · <a href="https://github.com/keriJ12/keri-portfolio" target="_blank">Source on GitHub</a></p>
+</footer>
 
 </body>
 </html>
