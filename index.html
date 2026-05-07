@@ -604,6 +604,48 @@ header.site {
 }
 .case-body ul li { margin: 0.3rem 0; }
 
+/* ==== Asset grids inside case bodies ==== */
+.case-grid-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin: 1.6rem 0 0.8rem;
+}
+.case-grid-photos.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.case-grid-photos > div {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--rule-soft);
+  border: 1px solid var(--rule);
+}
+.case-grid-photos img,
+.case-grid-photos video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.case-grid-photos > div:hover img,
+.case-grid-photos > div:hover video {
+  transform: scale(1.04);
+}
+@media (max-width: 720px) {
+  .case-grid-photos,
+  .case-grid-photos.cols-2 { grid-template-columns: repeat(2, 1fr); }
+}
+.grid-caption {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--ink-faint);
+  margin: 0.4rem 0 0;
+  line-height: 1.5;
+}
+
 /* ==== Footer ==== */
 footer.site {
   border-top: 1px solid var(--rule);
@@ -929,6 +971,14 @@ footer.site a { color: var(--ink-soft); }
       <li>Munich: 8 consecutive editions, prep down from 4 months to 1.5</li>
       <li>2-person team has internalized both playbooks; I now do final review only</li>
     </ul>
+
+    <div class="case-grid-photos cols-2">
+      <div><img src="./portfolio/assets/collection/munich/munich-moodboard-seidra.jpg" alt="Munich Fabric Start moodboard" loading="lazy"></div>
+      <div><img src="./portfolio/assets/collection/munich/munich-signage-h2a08.jpg" alt="Munich Fabric Start booth signage H2A08" loading="lazy"></div>
+      <div><img src="./portfolio/assets/collection/munich/munich-team-booth.jpg" alt="Team at Munich Fabric Start booth" loading="lazy"></div>
+      <div><img src="./portfolio/assets/collection/munich/munich-fabric-hero.jpg" alt="Fabric weaves on the Munich collection wall" loading="lazy"></div>
+    </div>
+    <p class="grid-caption">Munich Fabric Start, 8 editions across 4 years — moodboard, booth signage, team setup, collection wall.</p>
   </div>
 
   <div class="case-body" id="case-4">
@@ -954,6 +1004,16 @@ footer.site a { color: var(--ink-soft); }
       <li>Validated Reel cover formula turned from intuitive judgment into a repeatable scoring rule — usable by someone else</li>
       <li>Same architecture would scale across Audi / Breitling / Puma at LOOP — configuration changes, spine doesn't</li>
     </ul>
+
+    <div class="case-grid-photos">
+      <div><img src="./portfolio/assets/recent-ai-content/mrzhu/mrzhu-brand-composite.jpg" alt="Mr Zhu brand composite mood-board" loading="lazy"></div>
+      <div><img src="./portfolio/assets/recent-ai-content/mrzhu/mrzhu-reis-vs-nudel.jpg" alt="Mr Zhu — Reis vs Nudel campaign asset" loading="lazy"></div>
+      <div><img src="./portfolio/assets/recent-ai-content/mrzhu/mrzhu-schueler-google-business.png" alt="Mr Zhu student campaign on Google Business" loading="lazy"></div>
+      <div><img src="./portfolio/assets/recent-ai-content/mrzhu/mrzhu-schueler-reel.png" alt="Mr Zhu student-targeted Reel cover" loading="lazy"></div>
+      <div><video src="./portfolio/assets/recent-ai-content/mrzhu/mrzhu-mascot-illustration.mp4" autoplay loop muted playsinline preload="metadata"></video></div>
+      <div><video src="./portfolio/assets/recent-ai-content/mrzhu/mrzhu-tictactoe-sushi.mp4" autoplay loop muted playsinline preload="metadata"></video></div>
+    </div>
+    <p class="grid-caption">One restaurant, six channel-specific assets — Reel cover, Google Business post, student campaign, mascot illustration, recipe game video. Same brand voice, multiple formats and channels.</p>
   </div>
 
 </section>
